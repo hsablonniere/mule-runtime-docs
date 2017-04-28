@@ -1,0 +1,32 @@
+= Modules Reference
+ifndef::env-github+env-site[]
+include::_attributes.adoc[]
+endif::[]
+:page-id: mule-runtime@3.7::modules/modules-reference
+:keywords: anypoint studio, esb, modules
+
+Modules are similar to xref:transports/connecting-using-transports#[transports] in that they provide pluggable functionality, configured via dedicated schema, but they differ in that there is no underlying transport to send or receive data. Following is a list of the default Mule ESB modules.
+
+[%header,cols="2*"]
+|===
+|Module |Description
+|xref:modules/atom-module-reference#[Atom Module] |Support for consuming and creating Atom feeds.
+|xref:modules/bpm-module-reference#[BPM] |Mule's support for BPM allows you to send/receive messages to/from a running process. A message from Mule can start or advance a process, the message can be stored as a process variable, and a running process can send messages to any endpoint in your Mule application.
+|xref:modules/cxf-module-reference#[CXF Module] |Mule 3.0 architectural changes bring much better support for CXF, meaning it can be used just like another pipe/filter element.
+|xref:administer/using-the-mule-client#[Client Module] |MuleClient and the remote dispatcher, giving simple access to the Mule server.
+|xref:modules/jaas-module-reference#[JAAS Module] |Security via JAAS.
+|xref:modules/jboss-transaction-manager-reference#[JBoss Transaction Manager] |JBoss transaction support.
+|xref:modules/jboss-jbpm-module-reference#[jBPM Module] |http://www.jboss.org/jbpm[JBoss jBPM] is a best-of-breed open source BPMS and is well-integrated with Mule. One advantage of jBPM is that it is embedded directly in the Mule runtime, allowing for faster performance.
+|xref:modules/jersey-module-reference#[Jersey Module] |Support for RESTful web services built using Jersey.
+|xref:modules/json-module-reference#[JSON Module] |JSON data and binding support.
+|xref:administer/mule-agents#[Management Module] |Mule agents for server management using JMX.
+|OGNL Module |Provides a filter using OGNL expressions. +
+*Note*: OGNL is deprecated in Mule 3.6 and will be removed in Mule 4.0. 
+|xref:security/pgp-security#[PGP Module] |Security via PGP.
+|xref:security/saml-module#[SAML Module] _*Enterprise Edition*_ |Provides authentication and authorization capabilities to Mule based on the SAML standard. (As of Mule enterprise edition 2.2.3)
+|xref:modules/rss-module-reference#[RSS Module] |Support for consuming RSS feeds
+|xref:modules/scripting-module-reference#[Scripting Module] |Interface between Mule and scripting languages (currently link:http://groovy-lang.org/[Groovy]).
+|xref:modules/spring-extras-module-reference#[Spring Extras Module] |Extensions for using the Spring framework with Mule.
+|xref:modules/sxc-module-reference#[SXC Module] |A very fast streaming XPath router and filter.
+|xref:modules/xml-module-reference#[XML Module] |XML based utilities (mainly filters and routers).
+|===

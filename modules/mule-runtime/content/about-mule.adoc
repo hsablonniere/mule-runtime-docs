@@ -1,0 +1,25 @@
+= Mule Runtime
+ifndef::env-github+env-site[]
+include::_attributes.adoc[]
+endif::[]
+:page-id: mule-runtime@3.7::about-mule
+
+This section offers information about how to use link:https://www.mulesoft.org/what-mule-esb[Mule ESB] and xref:anypoint-studio@5::about-anypoint-studio#[Anypoint Studio] to integrate systems, orchestrate Web services, or smoothly connect anything to anything. Use the navigation tree at left to access other sections and learn more about Mule features and projects.
+
+* xref:install/installing#[Installing]
+* xref:developing#[Developing]
+* xref:security/securing#[Securing]
+* xref:debug/debugging#[Debugging]
+* xref:testing/testing#[Testing]
+* xref:deploy/deploying#[Deploying]
+* link:/mule-user-guide/v/3.7/extending[Extending]
+* link:/mule-user-guide/v/3.7/reference[Reference]
+
+== See Also
+
+* xref:install/installing#[Install and Run Mule ESB]
+* xref:general@master::to-get-anypoint-platform#[Anypoint Fundamentals]
+* link:/mule-management-console/v/3.7/setting-up-mmc[Set up the Mule Management Console]
+* xref:anypoint-platform@latest::cloudhub:cloudhub#[Run Mule Applications on CloudHub]
+* xref:anypoint-connector-devkit@3.7::about-devkit#[Extend the Mule ESB with the DevKit]
+* link:http://www.mulesoft.com/webinars/esb/mule-101-intro-to-mule[Watch the Mule 101 Webinar to learn the basic Mule concepts]

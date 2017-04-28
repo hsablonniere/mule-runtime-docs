@@ -1,0 +1,27 @@
+= Deploying
+ifndef::env-github+env-site[]
+include::_attributes.adoc[]
+endif::[]
+:page-id: mule-runtime@3.7::deploy/deploying
+:keywords: deploy, deploying, cloudhub, on premises, on premise
+
+Mule standalone can run multiple applications. This means you can include the same name spaces within different applications and they neither collide nor share information.
+
+In effect, Mule is an app server. Mule checks for new apps (in the apps directory) and starts them.
+
+Mule also restarts apps if it detects that the apps have changed, meaning you can drop a revised version of an existing, running application into the /apps directory, Mule stops the existing app and restarts using the new files. 
+
+If Mule is embedded in another container, the link:/mule-management-console/v/3.7[Mule Management Console] cannot perform auto-discovery or server restarts.
+
+*Deploying Topics:*
+
+* xref:deploy/starting-and-stopping-mule-esb#[Starting and Stopping Mule ESB]
+* xref:deploy/deployment-scenarios#[Deployment Scenarios]
+* xref:deploy/deploying-to-multiple-environments#[Deploying to Multiple Environments]
+* xref:administer/clustering/mule-high-availability-ha-clusters#[Mule High Availability HA Clusters]
+* xref:deploy/mule-deployment-model#[Mule Deployment Model]
+* xref:mule-server-notifications#[Mule Server Notifications]
+* xref:testing/profiling-mule#[Profiling Mule]
+* xref:deploy/hardening-your-mule-installation#[Hardening your Mule Installation]
+* xref:deploy/configuring-mule-for-standalone-deployment-scenarios#[Configuring Mule for Different Deployment Scenarios]
+* xref:anypoint-studio@5::preparing-a-gitignore-file#[Preparing a gitignore File]

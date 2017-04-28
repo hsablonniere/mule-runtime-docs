@@ -1,0 +1,11 @@
+= Data Bindings Reference
+ifndef::env-github+env-site[]
+include::_attributes.adoc[]
+endif::[]
+:page-id: mule-runtime@3.7::modules/data-bindings-reference
+:keywords: jabx, jackson
+
+Data binding frameworks such as JAXB or Jackson (JSON) allow developers easily work with XML and and JSON by binding the data to object graphs.
+
+* xref:modules/jaxb-bindings#[JAXB Bindings]
+* xref:modules/json-module-reference#[JSON Bindings]

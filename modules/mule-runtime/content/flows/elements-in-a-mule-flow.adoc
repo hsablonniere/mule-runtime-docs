@@ -1,0 +1,18 @@
+= Elements in a Mule Flow
+ifndef::env-github+env-site[]
+include::_attributes.adoc[]
+endif::[]
+:page-id: mule-runtime@3.7::flows/elements-in-a-mule-flow
+:keywords: studio, server, components, connectors, elements, palette
+
+Building upon the information presented in xref:mule-concepts#[Mule Concepts], this section offers more detailed descriptions of the different types of message sources and message processors, and what they do within a Mule flow.
+
+xref:connectors:index#[image:connectors.png[connectors]]
+xref:components/mule-components#[image:components.png[components]]
+xref:transformers/mule-transformers#[image:transformers.png[transformers]]
+xref:mule-filters-scopes-and-routers#[image:filters-routers-scopes.png[Filters,Scopes, and Routers]]   xref:exceptions/mule-exception-strategies#[image:<missing>exception_strategies.png[Exception Strategies]]
+
+== See Also
+
+* *NEXT STEP*: Start with xref:connectors:index#[Mule Connectors], then read on about the various Mule message processors as listed above.
+* Skip ahead to understand the structure of a xref:messages/about-mule-message#[Mule message].

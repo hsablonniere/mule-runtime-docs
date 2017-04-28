@@ -1,0 +1,31 @@
+= General Configuration Reference
+ifndef::env-github+env-site[]
+include::_attributes.adoc[]
+endif::[]
+:page-id: mule-runtime@3.7::mule-configuration/general-configuration-reference
+:keywords: esb, configure, finetune
+
+Mule provides Javadoc-style link:http://www.mulesoft.org/docs/site/3.0.0/schemadocs/[schema documentation], making it easier to familiarize yourself with all the elements and attributes permissible in XML configuration files.
+
+[cols="2*"]
+|===
+a|
+* xref:mule-configuration/bpm-configuration-reference#[BPM Configuration Reference]
+* xref:components/component-configuration-reference#[Component Configuration Reference]
+* xref:endpoints/endpoint-configuration-reference#[Endpoint Configuration Reference]
+* xref:components/entry-point-resolver-configuration-reference#[Entry Point Resolver Configuration Reference]
+* xref:exceptions/exception-strategy-configuration-reference#[Exception Strategy Configuration Reference]
+* xref:filters/filters-configuration-reference#[Filters Configuration Reference]
+* xref:mule-configuration/global-settings-configuration-reference#[Global Settings Configuration Reference]
+ a|
+* xref:non-mel-expressions/non-mel-expressions-configuration-reference#[Non-MEL Expressions Configuration Reference]
+* xref:mule-configuration/notifications-configuration-reference#[Notifications Configuration Reference]
+* xref:mule-configuration/properties-configuration-reference#[Properties Configuration Reference]
+* xref:security/security-manager-configuration-reference#[Security Manager Configuration Reference]
+* xref:transactions/transactions-configuration-reference#[Transactions Configuration Reference]
+* xref:transformers/transformers-configuration-reference#[Transformers Configuration Reference]
+|===
+
+For configuration reference on transports, see xref:transports/transports-reference#[Transports Reference]. For modules, see xref:modules/modules-reference#[Modules Reference].
+
+For transports and modules contributed by the community, see link:https://www.mulesoft.com/exchange#!/?types=connector&filters=Community&sortBy=name[Anypoint Exchange Community Connectors].
