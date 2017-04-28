@@ -21,6 +21,9 @@ Import additional connectors into your Studio instance, or manually create appl
 
 The following shows the relationship of connectors to other components in the Anypoint Platform:
 
+* Module dir: "{moduledir}"
+* Images dir: "{imagesdir}"
+
 image:anypointconnectorgraphic.png[AnypointConnectorGraphic]
 
 *Components*
