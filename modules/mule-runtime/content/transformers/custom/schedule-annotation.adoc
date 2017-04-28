@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transformers/custom/schedule-annotation
+:page-id: mule-runtime@3.8::transformers/custom/schedule-annotation
 :keywords: annotations, custom java code
 
 The `@Schedule` annotation is a method level annotation that is used to schedule how often the method is called. To call a method every second you could use the following -

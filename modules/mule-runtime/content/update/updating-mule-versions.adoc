@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::update/updating-mule-versions
+:page-id: mule-runtime@3.8::update/updating-mule-versions
 :keywords: mule, runtime, release notes, migration, installation, downtime, uptime, best practices
 
 This document describes considerations and best practices when changing the Mule Runtime versions on your servers on-premises. This covers the use cases of deploying to Mule standalone instances, to Mule instances on premises through xref:anypoint-platform@latest::runtime-manager:index#[Runtime Manager], and to Mule instances on premises through the xref:mule-management-console@3.8::about-mmc#[Mule Management Console].
@@ -23,7 +23,7 @@ Mule runtimes use semantic versioning, therefore please note that Mule applicati
 ====
 
 
-Before you begin, read the xref:general@master::release-notes:mule-runtime/supported-versions#[release notes] for the Mule Runtime version you wish to upgrade to (which we will call the target version, from here on), to know if you must make any necessary changes to your applications to ensure compatibility. For example, if you migrate from a version that's older than 3.6 to a version that's newer, you might want to xref:@3.8::connectors:http/migrating-to-the-new-http-connector#[change all HTTP connectors] to the newer version of this connector as the old one is deprecated as of Mule Runtime 3.6.
+Before you begin, read the xref:general@master::release-notes:mule-runtime/supported-versions#[release notes] for the Mule Runtime version you wish to upgrade to (which we will call the target version, from here on), to know if you must make any necessary changes to your applications to ensure compatibility. For example, if you migrate from a version that's older than 3.6 to a version that's newer, you might want to xref:connectors:http/migrating-to-the-new-http-connector#[change all HTTP connectors] to the newer version of this connector as the old one is deprecated as of Mule Runtime 3.6.
 
 If there are no relevant changes between the Mule Runtime version in which the application is developed and the target Mule Runtime version to which you're migrating, then you shouldn't need to modify your application. Mule Runtimes support having applications that are built with older Mule versions deployed to them.
 
@@ -63,9 +63,9 @@ If any of your previous applications rely on a full or a partial custom patch in
 Otherwise, please contact MuleSoft Support by creating a new support case, to request a new patch compatible with the target version. Patch files are version specific and MUST NOT be used in a different runtime version.
 ====
 +
-. Download a new copy of your license from the Customer Portal and install it on the target version, by following the instructions described at xref:@3.8::install/installing-an-enterprise-license#[Installing an Entrerprise License].
+. Download a new copy of your license from the Customer Portal and install it on the target version, by following the instructions described at xref:install/installing-an-enterprise-license#[Installing an Entrerprise License].
 . If you have set any custom configurations to your runtime instance – for example: if you defined a different maximum heap size in the `wrapper.conf` file –  you might want to replicate these settings manually.
-. xref:@3.8::deploy/starting-and-stopping-mule-esb#[Run your new Mule Server] to verify your installation is working as expected.
+. xref:deploy/starting-and-stopping-mule-esb#[Run your new Mule Server] to verify your installation is working as expected.
 . Depending on the circumstances and your current infrastructure, you might want to consider shutting down your previous Mule Server at this point. Please evaluate the impact of this action before proceeding.
 . If you have previously set any environment variables, such as `MULE_HOME` or `PATH`, make sure that they are now pointing to the new Runtime's installation path.
 . Deploy your applications to your new Mule Server.

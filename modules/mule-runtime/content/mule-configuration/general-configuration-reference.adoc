@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::mule-configuration/general-configuration-reference
+:page-id: mule-runtime@3.8::mule-configuration/general-configuration-reference
 :keywords: esb, configure, finetune
 
 Mule provides Javadoc-style link:http://www.mulesoft.org/docs/site/3.0.0/schemadocs/[schema documentation], making it easier to familiarize yourself with all the elements and attributes permissible in XML configuration files.

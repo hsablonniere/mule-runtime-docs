@@ -2,20 +2,20 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::mule-configuration/schema-documentation
-:keywords: anypoint studio, esb, schema
+:page-id: mule-runtime@3.8::mule-configuration/schema-documentation
+:keywords: anypoint studio, schema
 
 Mule 3.0 was released with new Javadoc-style schema documentation, making it easier to familiarize yourself with all the elements and attributes permissible in xml configuration files.
 
-If you are familiar with versions of Mule older than v 3.0, you may want to consult this list of xref:mule-configuration/notes-on-mule-3.0-schema-changes#[schema changes].
+If you are familiar with versions of Mule older than v3.0, you may want to consult this list of xref:mule-configuration/notes-on-mule-3.0-schema-changes#[schema changes].
 
 == JavaDoc-Style HTML Output
 
 Framed HTML documentation provides most detailed and easy accessible information about all Mule schema components and interconnections between them.
 
 * link:http://www.mulesoft.org/docs/site/current3/schemadocs[Schemadocs]
-* link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/[API Docs]
-* link:http://www.mulesoft.org/docs/site/3.7.0/testapidocs/[Test API Docs]
+* link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/[3.8.0 API Docs]
+* link:http://www.mulesoft.org/docs/site/3.8.0/testapidocs/[3.8.0 Test API Docs]
 
 == UML Diagrams
 

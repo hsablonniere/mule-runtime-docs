@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/supported-web-service-standards
+:page-id: mule-runtime@3.8::modules/supported-web-service-standards
 :keywords: cxf
 
 The CXF module supports a variety of web service standards.

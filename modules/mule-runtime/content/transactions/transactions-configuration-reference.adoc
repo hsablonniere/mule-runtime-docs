@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transactions/transactions-configuration-reference
+:page-id: mule-runtime@3.8::transactions/transactions-configuration-reference
 :keywords: transactions, configuration
 
 [NOTE]

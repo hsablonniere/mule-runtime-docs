@@ -2,10 +2,10 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::mule-configuration/about-components-supporting-streaming
+:page-id: mule-runtime@3.8::mule-configuration/about-components-supporting-streaming
 :keywords: mule, esb, studio, streaming, memory, large payload
 
-Streaming enables efficient processing of large data objects such as files, documents, and records by streaming the data through Mule ESB rather than reading the whole thing into memory. Streaming provides the following advantages:
+Streaming enables efficient processing of large data objects such as files, documents, and records by streaming the data through Mule rather than reading the whole thing into memory. Streaming provides the following advantages:
 
 * Allows flows to consume very large messages in an efficient way
 * Message payloads are not read into memory
@@ -17,7 +17,7 @@ Streaming enables efficient processing of large data objects such as files, docu
 The following transports, connectors and modules support streaming:
 
 * xref:modules/cxf-module-reference#[CXF]
-* xref:anypoint-studio@5::datamapper/streaming-data-processing-with-datamapper#[DataMapper]
+* xref:anypoint-studio@6::datamapper/streaming-data-processing-with-datamapper#[DataMapper]
 * xref:transports/file-transport-reference#[File] (set the `streaming` attribute to false to access the File object directly)
 * xref:transports/ftp-transport-reference#[FTP]
 * xref:connectors:http/http-connector#[HTTP] and xref:connectors:http/http-connector#[HTTPS]
@@ -25,7 +25,7 @@ The following transports, connectors and modules support streaming:
 * xref:transports/servlet-transport-reference#[Servlet]
 * xref:transports/tcp-transport-reference#[TCP]
 * xref:transports/udp-transport-reference#[UDP]
-* xref:transports/vm-transport-reference#[VM]
+* xref:transports/sftp-transport-reference#[SFTP]
 
 == Streaming Transformers and Filters
 
@@ -33,6 +33,7 @@ Many transformers and filters can read input streams, process the contents, and 
 
 The following transformers and filters do support true streaming and process the data as streams without loading them into memory first:
 
+* xref:modules/xslt-transformer#[XSLT Transformer]
 * xref:modules/xmltoxmlstreamreader-transformer#[XmlToXMLStreamReader Transformer]
 * xref:modules/domtoxml-transformer#[DomToOutputHandler transformer] (if the incoming XML format is a SAXSource or XMLStreamReader)
 * xref:modules/sxc-module-reference#[SXC filter]

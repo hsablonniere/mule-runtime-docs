@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::components/expression-component-reference
+:page-id: mule-runtime@3.8::components/expression-component-reference
 :keywords: expression component, native code, legacy code, java, javascript, python, groovy, ruby, custom code
 
 This component evaluates an xref:mel/mule-expression-language-mel#[expression]. It accepts either a user-defined expression or a reference to a file.

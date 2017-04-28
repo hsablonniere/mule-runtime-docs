@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/jersey-module-reference
+:page-id: mule-runtime@3.8::modules/jersey-module-reference
 :keywords: mule, studio, jersey, rest, restful, api
 
 link:https://jersey.java.net/documentation/latest/index.html[Jersey] is a framework built over link:https://jax-rs-spec.java.net/[JAX-RS] (JSR-311) implementation. JAX-RS is a specification that provides a series of annotations and classes which make it possible to build RESTful services. The Mule Jersey transport makes it possible to deploy these annotated classes inside Mule.
@@ -28,11 +28,11 @@ The latest Jersey module uses Jersey v2.11
 
 == Writing a Service
 
-Writing JAX-RS services is an expansive topic and isn't covered in this guide. However, the link:https://jersey.java.net/[Jersey] website has an excellent set of samples, and the link:http://jcp.org/aboutJava/communityprocess/final/jsr311/index.html[JAX-RS specification] is helpful as well.
+Writing JAX-RS services is an expansive topic and is not covered in this guide. However, the link:https://jersey.java.net/[Jersey] website has an excellent set of samples, and the link:http://jcp.org/aboutJava/communityprocess/final/jsr311/index.html[JAX-RS specification] is helpful as well.
 
 This guide takes a look at a simple hello world service. This example requires the installation of Apache Xalan JARs.
 
-The first step to create a JAX-RS service is to create a class which represents your HTTP resource. In our case we'll create a "HelloWorldResource" class. Methods in this class are called in response to GET, POST, DELETE, and PUT invocations on specific URLs.
+The first step to create a JAX-RS service is to create a class which represents your HTTP resource. In our case we create a "HelloWorldResource" class. Methods in this class are called in response to GET, POST, DELETE, and PUT invocations on specific URLs.
 
 The @Path annotation allows you to bind a class/resource to a specific URL. In the sample below we're binding the HelloWorldResource class to the "/helloworld" URL.
 
@@ -48,18 +48,21 @@ import javax.ws.rs.PathParam;
 @Path("/helloworld")
 public class HelloWorldResource {
 
-    @POST //<1>
-    @Produces("text/plain") //<2>
-    @Path("/{name}") //<3>
-    public String sayHelloWithUri(@PathParam("name") String name) { //<4>
+    @POST
+    @Produces("text/plain")
+    @Path("/{name}")
+    public String sayHelloWithUri(@PathParam("name") String name) {
         return "Hello " + name;
     }
 }
 ----
-<1> @POST specifies that this method is only called on @POST requests to the URL.
-<2> @Produces specifies that this method is producing a resource with a mime type of "text/plain".
-<3> @Path binds this method to the URL "/helloworld/\{name}". The \{name} is a URI template. Anything in this portion of the URL maps to a URI parameter named "name" (see below)
-<4> @PathParam binds the first parameter of the method to the URI parameter in that path named "name".
+
+Looking at the "sayHelloWithUri" method we see several annotations involved:
+
+* @POST specifies that this method is only called on @POST requests to the URL.
+* @Produces specifies that this method is producing a resource with a mime type of "text/plain".
+* @Path binds this method to the URL "/helloworld/\{name}". The \{name} is a URI template. Anything in this portion of the URL maps to a URI parameter named "name" (see below).
+* @PathParam binds the first parameter of the method to the URI parameter in that path named "name".
 
 == Deploy the Web Service
 
@@ -113,7 +116,7 @@ public class HelloWorldExceptionMapper implements ExceptionMapper<HelloWorldExce
 
 == Context Resolvers
 
-link:https://jersey.java.net/nonav/apidocs/1.12/jersey/javax/ws/rs/ext/ContextResolver.html[Context resolvers] are injected into resource classes, and they provide context information to them, which can be useful in certain cases when you need specific metadata that is not available by default.
+https://jersey.java.net/nonav/apidocs/1.12/jersey/javax/ws/rs/ext/ContextResolver.html[Context resolvers] are injected into resource classes, and they provide context information to them, which can be useful in certain cases when you need specific metadata that is not available by default.
 
 When you use JAXB for your XML/JSON serialization, JAXB provides some annotations in case you would need to change the output format. A simple example of such annotations is @XmlElement where you can provide the name of the field as a property on the annotation itself: @XmlElement(name="PersonName").
 
@@ -287,7 +290,7 @@ You can execute resources passing your own set of server properties. For example
 
 == Extension Autodiscovery
 
-Jersey owns a very extensible Java API that allows developers to modify almost every aspect of its inner working. Because Jersey provides so many extension points, these are exposed in Mule through auto discovery capabilities. Per Jersey’s own API, every class that you annotate with the _@Provider_ annotation can be used as an extension point. A list of java packages that contain this annotation and exist in the mule namespace is shown, every discovered class automatically registers in the resource’s context.
+Jersey owns a very extensible Java API that allows developers to modify almost every aspect of its inner working. Because Jersey provides so many extension points, these are exposed in Mule through auto discovery capabilities. Per Jersey’s own API, every class that you annotate with the _@Provider_ annotation can be used as an extension point. A list of Java packages that contain this annotation and exist in the Mule namespace is shown, every discovered class automatically registers in the resource’s context.
 
 Here’s an example of how to register your own JAXB body writers and readers for an hypothetical Person class:
 
@@ -382,8 +385,7 @@ public MyBean readFrom(Class<MyBean> type,
 
 == See Also
 
-For more information on how to use Jersey, see the link:https://jersey.java.net/[project website].
-
+For more information on how to use Jersey, see the link:http://jersey.dev.java.net/[project website].
 * link:http://training.mulesoft.com[MuleSoft Training]
 * link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
 * link:http://blogs.mulesoft.com[MuleSoft Blogs]

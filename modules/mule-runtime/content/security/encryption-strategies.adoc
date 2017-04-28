@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::security/encryption-strategies
+:page-id: mule-runtime@3.8::security/encryption-strategies
 :keywords: encryption, security manager, encryption transformers, security filters, secure transports
 
 The Security Manager can be configured with one or more encryption strategies that can then be used by encryption transformers, security filters, or secure transports such as xref:transports/ssl-and-tls-transports-reference#[SSL] or xref:connectors:http/http-connector#[HTTPS]. These encryption strategies can greatly simplify configuration for secure messaging as they can be shared across components.

@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::security/saml-module
+:page-id: mule-runtime@3.8::security/saml-module
 :keywords: anypoint studio, esb, saml, security, federated
 
 *_Enterprise_*

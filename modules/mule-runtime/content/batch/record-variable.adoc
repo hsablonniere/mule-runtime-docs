@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::batch/record-variable
+:page-id: mule-runtime@3.8::batch/record-variable
 :keywords: anypoint studio, esb, batch, record variables, collections, arrays
 
 _Enterprise, CloudHub_
@@ -13,11 +13,11 @@ image:capture_customer_contact.png[capture_customer_contact]
 
 == Prerequisites
 
-This document assumes that you are familiar with xref:anypoint-studio@5::about-anypoint-studio#[Anypoint Studio] and have reviewed the overview and basic anatomy of xref:batch/batch-processing#[Batch Processing]. 
+This document assumes that you are familiar with xref:anypoint-studio@6::about-anypoint-studio#[Anypoint Studio] and have reviewed the overview and basic anatomy of xref:batch/batch-processing#[Batch Processing]. 
 
 == Setting a Record Variable
 
-During the xref:batch/batch-processing#[Process phase], the record _is_ the message payload. As such, you may wish to use MEL expressions in message processors within a batch step to replace or manipulate the payload during processing. However, where you don't want to touch the payload, you can use record variables to persist information between batch steps. There are two way you can set record variables within batch steps in a batch job:
+During the xref:batch/batch-processing#[Process phase], the record _is_ the message payload. As such, you may wish to use MEL expressions in message processors within a batch step to replace or manipulate the payload during processing. However, where you don't want to touch the payload, you can use record variables to persist information between batch steps. There are two ways you can set record variables within batch steps in a batch job:
 
 * Set a *Record Variable message processor* in one of the batch steps in your batch job, setting the *Operation* to *Set Record Variable*. View full details of the message processor's xref:batch/batch-processing-reference#[attributes].
 +
@@ -69,21 +69,21 @@ image:remove_rec_variable.png[remove_rec_variable]
 
 To access a record variable within the xref:batch/batch-processing#[Process] and xref:batch/batch-processing#[On Complete] phases of batch processing, use the following expression:
 
-[source, code, linenums]
+[source]
 ----
 #[recordVars['foo']]
 ----
 
 For example, say you conditionally set a record variable on records in the first batch step – maybe wherever the value of `state` is `Maine`, you set a recordVars for "qualified".
 
-[source, code, linenums]
+[source, xml, linenums]
 ----
-batch:set-record-variable-transformer doc:name="Record Variable" variableName="qualified" value="#[message.payload.state['ME']]"/>
+<batch:set-record-variable-transformer doc:name="Record Variable" variableName="qualified" value="#[message.payload.state['ME']]"/>
 ----
 
 In the second batch step, you can use an accept expression to instruct the step to process only qualified records, as shown below.
 
-[source, code, linenums]
+[source]
 ----
 #[recordVars['qualified']]
 ----

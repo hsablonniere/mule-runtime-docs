@@ -2,16 +2,19 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::connectors:ftp/ftp-connector
+:page-id: mule-runtime@3.8::connectors:ftp/ftp-connector
 :keywords: anypoint studio, esb, connectors, files transfer, ftp, sftp, endpoints
+
+image:ftp-connector-icon.png[ftp connector]
+
 
 The FTP Connector implements a file transport channel so that your Mule application can exchange files with an external FTP server. You can configure FTP as an inbound endpoint (which receives files) or outbound endpoint (which writes files to the FTP server).
 
-== Installation
+== Installing
 
 You can install a connector in Anypoint Studio using the instructions in xref:anypoint-platform@latest::exchange:anypoint-exchange#installing-a-connector-from-anypoint-exchange[Installing a Connector from Anypoint Exchange].  
 
-== Configuration
+== Configuring
 
 FTP endpoint configuration consists of two stages:
 
@@ -24,9 +27,10 @@ The tabs on the FTP properties editor display the various attributes you can con
 
 === General Tab
 
+
 This tab covers the attributes users most frequently choose to set. None are required for this particular tab, since Mule uses a default value whenever a user declines to set an attribute manually.
 
-image:general_tab.png[general_tab]
+image:ftp-connector-inbound.png[ftp-connector inbound]
 
 [%header,cols="2*"]
 |===
@@ -46,7 +50,7 @@ image:general_tab.png[general_tab]
 
 === Advanced Tab
 
-image:adv_tab.png[adv_tab]
+image:ftp-connector-advanced-tab.png[adv_tab]
 
 [%header,cols="2*"]
 |===
@@ -59,16 +63,25 @@ image:adv_tab.png[adv_tab]
 |*Connector Endpoint* |Use the drop-down list to select one of the previously configured global endpoint templates, if any exist. Alternatively, click the pencil icon to modify one of these previously created global endpoints. If you have not created any global endpoint for this type of endpoint, you can so by clicking the green plus icon (**+**), then completing the fields on the window that appears.
 |===
 
+=== Reconnection Tab
+
+You may configure reconnection and custom logic to make additional attempts to reach the endpoint.
+
+image:all-connectors-reconnection-tab.png[all connectors reconnection]
+
 === Transformers Tab
 
-image:transf_tab.png[transf_tab]
+image:ftp-connector-transformers-tab.png[transf_tab]
 
 [%header,cols="2*"]
 |===
 |Field |Description
-|*Request Transformer References* |Enter a list of synchronous transformers that are applied to the request before it is sent to the FTP transport.
-|*Response Transformer References* |Enter a list of synchronous transformers that are applied to the response before it is dispatched from the FTP transport.
+|*Transformer References: Request* |Enter a list of synchronous transformers that are applied to the request before it is sent to the FTP transport.
+|*Global Transformers* +
+|Enter a list of synchronous transformers that are applied to the response before it is dispatched from the FTP transport.
 |===
+
+
 
 == See Also
 

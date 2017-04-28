@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/xmltoxmlstreamreader-transformer
+:page-id: mule-runtime@3.8::modules/xmltoxmlstreamreader-transformer
 :keywords: anypoint studio, esb, transformers
 
 The XmlToXMLStreamReader transformer converts XML representations to a StAX XMLStreamReader. XMLStreamReaders allow XML to be parsed as a series of events that are "pulled" from the stream. It is very efficient.

@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/xmlobject-transformers
+:page-id: mule-runtime@3.8::modules/xmlobject-transformers
 :keywords: anypoint studio, esb, transformers
 
 This pair of transformers converts XML code to serialized objects and back again. For serialization of Java XML objects, see xref:modules/domtoxml-transformer#[DomToXml Transformer].

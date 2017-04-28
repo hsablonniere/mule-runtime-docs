@@ -2,8 +2,8 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transports/activemq-integration
-:keywords: esb, mule, activemq
+:page-id: mule-runtime@3.8::transports/activemq-integration
+:keywords: mule, activemq
 
 link:http://activemq.apache.org[Apache ActiveMQ] is a popular open source messaging provider which is easy to integrate with Mule. ActiveMQ supports the JMS 1.1 and J2EE 1.4 specifications and is released under the Apache 2.0 License.
 
@@ -73,7 +73,7 @@ Use the `failover://` protocol to connect to the cluster of brokers, and pass ad
 
 To create an embedded instance of ActiveMQ broker, such as a broker running on the same Java VM as Mule, use the `vm://` protocol, for example:
 
-[source, xml]
+[source, xml, linenums]
 ----
 <jms:activemq-connector name="jmsConnector" brokerURL="vm://localhost"/>
 ----
@@ -105,14 +105,14 @@ Sometimes it might be necessary to explicitly configure an instance of ActiveMQ 
 
 Reference this bean in `<jms:activemq-connector>`, for example:
 
-[source, xml]
+[source, xml, linenums]
 ----
 <jms:activemq-connector name="jmsConnector" connectionFactory-ref="connectionFactory" maxRedelivery="-1"/>
 ----
 
 [WARNING]
 ====
-Not setting `maxRedelivery` to -1  causes the default value of 0 to be used, and hence not performing any redelivery attempt.
+Not setting `maxRedelivery` to -1 causes the default value of 0 to be used, and hence not performing any redelivery attempt.
 
 When the limit is reached, the message is silently discarded, unless the customer configures a link:http://activemq.apache.org/message-redelivery-and-dlq-handling.html[DLQ (Dead Letter Queue)].
 ====
@@ -454,4 +454,3 @@ The activemq-xa-connector element configures an ActiveMQ version of the JMS conn
 |0..1
 |A placeholder for jndi-name-resolver strategy elements.
 |===
-

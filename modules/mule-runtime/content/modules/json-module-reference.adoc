@@ -2,14 +2,14 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/json-module-reference
-:keywords: mule, esb, studio, json, object notation
+:page-id: mule-runtime@3.8::modules/json-module-reference
+:keywords: mule, studio, json, object notation
 
 JSON, short for JavaScript Object Notation, is a lightweight data interchange format. JSON is a text-based, human-readable format for representing simple data structures and associative arrays (called objects).
 
 == Object Bindings
 
-Mule supports binding JSON data to objects and marshalling Java object to JSON using the link:https://github.com/codehaus/jackson[Jackson] Framework. Jackson uses annotations to describe how to map data to a Java object model. For example, use JSON data to map a person's information:
+Mule supports binding JSON data to objects and marshalling Java object to JSON using the link:http://mvnrepository.com/artifact/com.fasterxml.jackson.core[Jackson] Framework. Jackson uses annotations to describe how to map data to a Java object model. For example, use JSON data to map a person's information:
 
 [source, java, linenums]
 ----
@@ -67,7 +67,7 @@ This example receives the contents of the previous `people.json` file on an end
 
 === Global JSON Mapper
 
-The Jackson framework performs mappings through the `ObjectMapper`. This is an object that you can configure to serialise data and define mixins that add annotations to objects that you cannot change directly. You can also define a global `ObjectMapper`; a single mapper for all JSON transforms in your application. This is not required since Mule automatically creates a mapper for a transformer, but using a global mapper can be useful if you need to configure specific properties on the mapper or use mixins. To create a shared `ObjectMapper`, add the following to your Mule configuration file:
+The Jackson framework performs mappings through the `ObjectMapper`. This is an object that you can configure to serialize data and define mixins that add annotations to objects that you cannot change directly. You can also define a global `ObjectMapper`; a single mapper for all JSON transforms in your application. This is not required since Mule automatically creates a mapper for a transformer, but using a global mapper can be useful if you need to configure specific properties on the mapper or use mixins. To create a shared `ObjectMapper`, add the following to your Mule configuration file:
 
 [source, xml, linenums]
 ----
@@ -120,21 +120,21 @@ This query syntax provides a simple way to navigate a JSON data structure. The f
 
 Select a child entry:
 
-[source, code]
+[source]
 ----
 name
 ----
 
 To access array data, use square braces with an index value:
 
-[source, code]
+[source]
 ----
 emailAddresses[0]/type
 ----
 
 Or where the route element is an array:
 
-[source, code]
+[source]
 ----
 [0]/arrayElement
 ----
@@ -154,6 +154,25 @@ results/'http://foo.com'/value
 ----
 
 === JsonPath in Expressions
+
+[IMPORTANT]
+====
+The JsonPath expression evaluator was deprecated. The mechanism we recommend you use is:
+
+[source,xml,linenums]
+----
+<json:json-to-object-transformer
+     returnClass="java.util.HashMap" />
+<set-property propertyName="requestType"
+     value="#[message.payload.requestType]"/>
+B Extract simple
+item C Extract value inside
+an array
+￼￼￼<set-property propertyName="productId"
+     value="#[message.payload.products[0].productId]"/>
+----
+====
+
 
 You can use JsonPath in xref:mel/mule-expression-language-mel#[Mule expressions] to query JSON message payloads for filtering or xref:scopes/message-enricher#[enrichment].
 
@@ -193,7 +212,7 @@ emailAddresses[0]/type != null or emailAddresses[0]/flag != false
 ----
 |===
 
-String comparisons need to be in single quotes, 'null' is recognised as null, and boolean comparisons are supported. If checking numeric values just treat them as a string.
+String comparisons need to be in single quotes, 'null' is recognized as null, and boolean comparisons are supported. If checking numeric values just treat them as a string.
 
 == Configuration Reference
 
@@ -219,7 +238,7 @@ These are transformers specific to this transport. Note that these are added aut
 
 Filters can be used to control what data is allowed to continue in a flow.
 
-[%header%autowidth.spread]
+[%header,cols="30a,70a"]
 |====
 |Name |Description
 |`is-json-filter` |A filter that determines if the current message payload is a JSON encoded message.
@@ -228,8 +247,7 @@ Filters can be used to control what data is allowed to continue in a flow.
 
 == Validate schema
 
-Validates that the message payload represents a Json compliant with a +
- given Json schema.
+Validates that the message payload represents a JSON compliant with a given JSON schema.
 
 === Attributes of validate-schema
 
@@ -260,7 +278,7 @@ The Jackson mapper to use with a JSON transformer. This isn't required but can b
 
 === Attributes of mapper
 
-[%header%autowidth.spread]
+[%header,cols="30a,70a"]
 |===
 |Name |Description
 |`name` |The name of the mapper that is used to make a reference to it by the transformer elements. +
@@ -276,3 +294,10 @@ The Jackson mapper to use with a JSON transformer. This isn't required but can b
 |Name |Cardinality |Description
 |`mixin` |0..1 |
 |===
+
+== See Also
+
+* link:http://training.mulesoft.com[MuleSoft Training]
+* link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
+* link:http://blogs.mulesoft.com[MuleSoft Blogs]
+* link:http://forums.mulesoft.com[MuleSoft Forums]

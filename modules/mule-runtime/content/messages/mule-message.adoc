@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::messages/mule-message
+:page-id: mule-runtime@3.8::messages/mule-message
 :keywords: studio, components, elements, message, mule message, architecture, tutorial
 
 image:mulestudioa.png[mulestudio]
@@ -17,7 +17,7 @@ This tutorial assumes that you have downloaded and installed link:https://www.m
 
 If you are not using Studio, refer to the XML tabs within the following sections, which are also relevant for users of the standalone runtime: <<Using the Logger>> and Selecting Data from the Mule Message and its Environment with MEL. 
 
-This tutorial also assumes that you have a basic understanding of the xref:@3.8::messages/about-mule-message#[Mule message structure].
+This tutorial also assumes that you have a basic understanding of the xref:messages/about-mule-message#[Mule message structure].
 
 == Goals
 
@@ -285,7 +285,7 @@ The most direct and dynamic way of exploring which MEL expressions resolve as yo
 *Type*: java.lang.String
 |===
 
-For more ideas on MEL expressions to test out in the Mule Expression Evaluator, refer to the xref:@3.8::mel/mule-expression-language-basic-syntax#[syntax guide] or borrow some from the collection of introductory xref:@3.8::mel/mule-expression-language-examples#[MEL examples].
+For more ideas on MEL expressions to test out in the Mule Expression Evaluator, refer to the xref:mel/mule-expression-language-basic-syntax#[syntax guide] or borrow some from the collection of introductory xref:mel/mule-expression-language-examples#[MEL examples].
 
 == Selecting Data from Mule Messages and Their Environment with MEL
 
@@ -453,10 +453,10 @@ include::{samplesdir}/mule-message_3.xml[]
 
 == See Also
 
-* *NEXT STEP:* Learn how to xref:@3.8::deploy/starting-and-stopping-mule-esb#[start and stop Mule] from the command line.
-* Refer to the main xref:@3.8::mel/mule-expression-language-mel#[MEL documentation] including the collection of xref:@3.8::mel/mule-expression-language-examples#[examples], which demonstrate how to use MEL expressions in a variety of other message processors.
-* Access the Mule Expression Language xref:@3.8::mel/mule-expression-language-reference#[reference] page for a searchable listing of context objects and their fields, operations, and functions. 
-* Learn more about xref:anypoint-studio@6::studio-visual-debugger#[Visual Debugger], the xref:@3.8::components/logger-component-reference#[Logger], and xref:anypoint-studio@6::datasense/datasense#[DataSense].
+* *NEXT STEP:* Learn how to xref:deploy/starting-and-stopping-mule-esb#[start and stop Mule] from the command line.
+* Refer to the main xref:mel/mule-expression-language-mel#[MEL documentation] including the collection of xref:mel/mule-expression-language-examples#[examples], which demonstrate how to use MEL expressions in a variety of other message processors.
+* Access the Mule Expression Language xref:mel/mule-expression-language-reference#[reference] page for a searchable listing of context objects and their fields, operations, and functions. 
+* Learn more about xref:anypoint-studio@6::studio-visual-debugger#[Visual Debugger], the xref:components/logger-component-reference#[Logger], and xref:anypoint-studio@6::datasense/datasense#[DataSense].
 * If you haven't already, try some of our other tutorials, all of which involve using MEL expressions:
 ** xref:anypoint-studio@6::basic-studio-tutorial#[Basic Studio Tutorial]
 ** xref:general@master::content-based-routing#[Content-Based Routing Tutorial]

@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::validators/json-schema-validator
+:page-id: mule-runtime@3.8::validators/json-schema-validator
 :keywords: mule, esb, studio, json, object notation
 
 The JSON Schema validator evaluates JSON payloads at runtime and verifies that they match a referenced JSON schema. You can match against schemas that exist in a local file or in an external URI. If the validation fails, an exception is raised with feedback about what went wrong and a reference to the original invalid payload. The JSON Schema Validator supports schema drafts of version 4 and older.
@@ -132,7 +132,7 @@ In this example, any links to the external address ` http://my.site/schemas/fst
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-    xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.6.0"
+    xmlns:spring="http://www.springframework.org/schema/beans" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd

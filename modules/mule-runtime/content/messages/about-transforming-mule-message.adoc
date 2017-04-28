@@ -1,23 +1,28 @@
-= Message State
+= Mule Message Transformation
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::messages/about-transforming-mule-message
+:page-id: mule-runtime@3.8::messages/about-transforming-mule-message
 :keywords: studio, server, components, message, mule message
+:toc: macro
+:toc-title: Contents
+:toclevels: 2
 
-To better understand how Mule message processors act upon messages, it is useful to examine the state of a message before and after it is processed. When a transformer converts the content of a message payload from one data structure to another, or from one data format to another – for example, JSON to Java Object, Map to CSV, or Java Object to XML – you may wonder exactly how Mule has changed, removed or added to the contents of a message. Reviewing its "before and after" state should help you to be better able to work with the message further in the flow.
+toc::[]
 
-This document uses an example application and draws upon the content of the xref:messages/about-mule-message#[Mule Message Structure document] to examine the state of a message as it passes through a xref:dataweave/dataweave#[Transform Message component] in a flow. Running the application in debug mode in Anypoint Studio, the screenshots illustrates the state of a message using the xref:anypoint-studio@5::studio-visual-debugger#[Visual Debugger] which facilitates "frozen-in-time" viewing of a message.
+To better understand how Mule message processors act upon messages, it is useful to examine a message before and after it is processed. When a transformer converts the content of a message payload from one data structure to another, or from one data format to another – for example, JSON to Java Object, Map to CSV, or Java Object to XML – you may wonder exactly how Mule has changed, removed or added to the contents of a message. Reviewing a message "before and after" should help you to be better able to work with the message further in the flow.
 
-== Assumptions
+This document uses an example application and draws upon the content of the xref:messages/about-mule-message#[Mule Message Structure document] to examine a message as it passes through a xref:dataweave/dataweave#[Transform Message component] in a flow. Running the application in debug mode in Anypoint Studio, the screenshots illustrates the innards of a message using the xref:anypoint-studio@6::studio-visual-debugger#[Visual Debugger] which facilitates "frozen-in-time" viewing of a message.
 
-This document describes the details of the example within the context of *Anypoint Studio* , Mule ESB’s graphical user interface (GUI). Where appropriate, the XML configuration accompanies the Studio interface screenshots. This document assumes that you are familiar with Mule ESB and the  xref:anypoint-studio@5::about-anypoint-studio#[Anypoint Studio interface] . Further, it assumes you have read the xref:messages/about-mule-message#[Mule Message Structure document] to understand the contents of a Mule message. 
+== Background
 
-== Example
+This document describes the details of the example within the context of *Anypoint Studio* , Mule’s graphical user interface (GUI). Where appropriate, the XML configuration accompanies the Studio interface screenshots. This document assumes that you are familiar with Mule and the  xref:anypoint-studio@6::about-anypoint-studio#[Anypoint Studio interface]. Further, it assumes you have read the xref:messages/about-mule-message#[Mule Message Structure document] to understand the contents of a Mule message. 
 
-To examine the state of a message, this document uses an example application which converts the contents of a CSV file into contacts in Salesforce. You can view examples in xref:anypoint-platform@latest::exchange:anypoint-exchange#[the Library].
+== Revealing a Mule Message by Example
 
-Briefly, the File Endpoint** **polls the input folder for new files every ten seconds. When it spots a new file, it reads the content, then passes the data to the Transform Message component, which uses link:/mule-user-guide/v/3.7/dataweave-reference-documentation[DataWeave] code to transform the message payload. This component not only converts the format of the data from CSV to a collection, it maps the input fields from the CSV file – FirstName, LastName, etc. – to output fields that Salesforce uses in a collection. Each mapping earns an arrow which helps you to visualize the activity that occurs within the Transform Message component. When it has converted all the contacts in the file to a collection of Salesforce-friendly data, the application uses a Salesforce Connector to push data into your Salesforce account. The connector's configurations specify the *operation* – `Create` – and the *sObject type* – `Contact` – which dictate exactly how the data uploads to Salesforce; in this case, it creates new contacts. 
+To examine a Mule message, this document uses an example application which converts the contents of a CSV file into contacts in Salesforce. You can view examples in xref:anypoint-platform@latest::exchange:anypoint-exchange#[the Library].
+
+Briefly, the File Endpoint polls the input folder for new files every ten seconds. When it spots a new file, it reads the content, then passes the data to the Transform Message component, which uses xref:dataweave/dataweave#[DataWeave] code to transform the message payload. This component not only converts the format of the data from CSV to a collection, it maps the input fields from the CSV file – FirstName, LastName, etc. – to output fields that Salesforce uses in a collection. Each mapping earns an arrow which helps you to visualize the activity that occurs within the Transform Message component. When it has converted all the contacts in the file to a collection of Salesforce-friendly data, the application uses a Salesforce Connector to push data into your Salesforce account. The connector's configurations specify the *operation* – `Create` – and the *sObject type* – `Contact` – which dictate exactly how the data uploads to Salesforce; in this case, it creates new contacts. 
 
 [.ex]
 =====
@@ -31,7 +36,7 @@ image:message+state.png[message+state]
 
 [source, xml, linenums]
 ----
-<mule version="EE-3.6.0" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
 http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
@@ -69,13 +74,13 @@ As discussed in the xref:messages/about-mule-message#[Message Structure document
 * a *message header*, in which properties reside
 * a *message payload* which contains the data that Mule processes
 
-The  **Mule message object, **which contains the Mule message, may also contain *variables* .  The following sections examine the message header, payload and variables before the message encounters the Transform Message component in the above example. 
+The  *Mule message object*, which contains the Mule message, may also contain *variables* .  The following sections examine the message header, payload and variables before the message encounters the Transform Message component in the above example. 
 
 [TIP]
 ====
-To access this information about the state of the message header and payload, we set breakpoints on the message processors in the application, then ran the application in debug mode in Studio. Studio's *Visual Debugger* displays the messages's header and payload information in the *Mule Debugger Console*, below the canvas.
+To access this information about the message header and payload, we set breakpoints on the message processors in the application, then ran the application in debug mode in Studio. Studio's *Visual Debugger* displays the messages's header and payload information in the *Mule Debugger Console*, below the canvas.
 
-Learn more about how to examine the state of your messages using the xref:anypoint-studio@5::studio-visual-debugger#[Visual Debugger] .
+Learn more about how to examine the contents of your messages using the xref:anypoint-studio@6::studio-visual-debugger#[Visual Debugger] .
 ====
 
 ==== Message Header
@@ -94,7 +99,7 @@ image:payload.png[payload]
 
 ==== Properties
 
-The Visual Debugger also displays any inbound and outbound properties on the message as it enters the Transform Message component. The *Inbound Properties* on the message include metadata about the payload, including its filename, timstamp and the endpoint through which it entered the application, MULE_ORIGINATING_ENDPOINT. Inbound properties are _read-only_ and cannot be added, removed or copied by message processors in the application.
+The Visual Debugger also displays any inbound and outbound properties on the message as it enters the Transform Message component. The *Inbound Properties* on the message include metadata about the payload, including its filename, timestamp, and the endpoint through which it entered the application, MULE_ORIGINATING_ENDPOINT. Inbound properties are _read-only_ and cannot be added, removed or copied by message processors in the application.
 
 image:inbound.png[inbound] +
 
@@ -114,7 +119,7 @@ image:session.png[session] +
 
 === After Transforming the Message
 
-The task of the Transform Message component in this application is to convert the contents of the CSV file into a Java object that Salesforce can process. Further, it maps the contents so that the value in the Name column in the CSV file converts to the Name field in the Salesforce contact, and so on for each field. The following displays the message state as it emerges from this component.
+The task of the Transform Message component in this application is to convert the contents of the CSV file into a Java object that Salesforce can process. Further, it maps the contents so that the value in the Name column in the CSV file converts to the Name field in the Salesforce contact, and so on for each field. The following displays the message as it emerges from this component.
 
 ==== Message Header
 
@@ -212,4 +217,4 @@ Learn more in the xref:messages/about-mule-message#[Mule Message Structure] docu
 == See Also
 
 *  *NEXT STEP:* Read about xref:mule-configuration/global-elements#[Global Elements].
-*  Learn more about xref:anypoint-studio@5::studio-visual-debugger#[Studio Visual Debugger].
+*  Learn more about xref:anypoint-studio@6::studio-visual-debugger#[Studio Visual Debugger].

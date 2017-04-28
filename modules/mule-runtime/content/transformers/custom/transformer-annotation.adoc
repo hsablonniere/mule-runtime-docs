@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transformers/custom/transformer-annotation
+:page-id: mule-runtime@3.8::transformers/custom/transformer-annotation
 :keywords: annotations, custom java code
 
 * <<Creating Transformers>>
@@ -78,7 +78,7 @@ Now if a request is made to convert a a `java.io.InputStream` to a `java.net.URL
 
 == Working with XML and JSON
 
-Most web services deal with data formatted using XML or JSON (JavaScript Object Notation). Mule supports binding objects to XML and vice-versa using JAXB (Java API for XML binding) which is standard in JDK 6. JSON marshaling to objects and back again using a JSON parsing framework called link:https://github.com/codehaus/jackson[Jackson]. These frameworks are supported automatically by Mule.
+Most web services deal with data formatted using XML or JSON (JavaScript Object Notation). Mule supports binding objects to XML and vice-versa using JAXB (Java API for XML binding) which is standard in JDK 6. JSON marshaling to objects and back again using a JSON parsing framework called link:http://wiki.fasterxml.com/JacksonInFiveMinutes[Jackson]. These frameworks are supported automatically by Mule.
 
 == Accessing Message Information
 

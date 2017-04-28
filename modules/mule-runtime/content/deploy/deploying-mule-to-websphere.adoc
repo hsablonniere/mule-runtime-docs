@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/deploying-mule-to-websphere
+:page-id: mule-runtime@3.8::deploy/deploying-mule-to-websphere
 :keywords: deploy, deploying, websphere
 
 Before you can deploy your Mule application to an link:http://www-01.ibm.com/software/webservers/appserv/was/[IBM WebSphere application server], you must prepare it as a web application. This involves creating a `web.xml` file for your Mule application, then creating a `.war` file of all the supporting files.

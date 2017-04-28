@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::connectors:installing-connectors
+:page-id: mule-runtime@3.8::connectors:installing-connectors
 :keywords: mule, esb, studio, enterprise, connectors, install connectors
 
 This page explains how to install connectors, uninstall connectors, and work with connector dependencies in both Anypoint Studio and Maven.
@@ -30,18 +30,13 @@ If a connector or connector version is not in Anypoint Exchange, you can install
 . Under the *Anypoint Studio* menu, select *About Anypoint Studio*.  +
 image:aboutanypointstudio.png[AboutAnypointStudio]
 
-. In the *About Anypoint Studio* window, click *Installation Details* to display a list of the connectors you have installed on your instance of Anypoint Studio. 
+. In the *About Anypoint Studio* window, click *Installation Details* to display a list of the connectors you have installed on your instance of Anypoint Studio.
+. In the *Installed Software* tab, select the line item you wish to uninstall, then click *Uninstall*.
 +
-image:aboutanypointstudiomay2014-ed.png[AboutAnypointStudioMay2014-ed]
-
-. In the *Installed Software* tab, select the line item you wish to uninstall, then click **Uninstall…**. 
-+
-image:installedsoftware.png[InstalledSoftware]
+image:uninstall-installed-software.png[uninstall installed software]
 [TIP]
-To uninstall more than one item, click to select the first line item, then hold down the `CRTL` key (PC) or `command` key (Mac) as you click other line items.
-. Click *Finish* to uninstall the item(s) you selected. 
-+
-image:uninstalldetails.png[uninstalldetails]
+To uninstall more than one item, click to select the first line item, then hold down the `Ctrl` key (PC) or `command` key (Mac) as you click other line items.
+. Click *Finish* to uninstall the item(s) you selected. 
 
 [discrete.view]
 === Maven
@@ -74,6 +69,7 @@ Refer to xref:general@master::to-get-anypoint-platform#[Deploying Mule Applicati
 Complete the following procedure to manually add connector dependencies to your project's classpath in Studio.
 
 . In the *Package Explorer* pane, right-click on your project's name, then select *Build Path* > *Add Libraries*.
+image:build-path-add-libraries.png[build path add libraries]
 . In the *Add Libraries* wizard, select *Anypoint Connector Dependencies*, and click *Next*.
 +
 image:addlibrary1.png[AddLibrary1]

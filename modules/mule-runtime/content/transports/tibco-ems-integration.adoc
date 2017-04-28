@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transports/tibco-ems-integration
+:page-id: mule-runtime@3.8::transports/tibco-ems-integration
 
 The following example demonstrates how to configure Mule to use the link:http://www.tibco.com/products/automation/enterprise-messaging/enterprise-message-service[TIBCO Enterprise Message Server (EMS)] with authentication in place.
 

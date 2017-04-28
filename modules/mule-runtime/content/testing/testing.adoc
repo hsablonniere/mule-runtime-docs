@@ -2,15 +2,12 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::testing/testing
+:page-id: mule-runtime@3.8::testing/testing
 
-This section describes how to test your Mule application.
+These topics are entry points for different Mule application testing strategies.
 
-* xref:testing/introduction-to-testing-mule#[Introduction to Testing Mule]
+* xref:testing/testing#[Introduction to Testing]
 * xref:testing/unit-testing#[Unit Testing]
 * xref:testing/functional-testing#[Functional Testing]
 * xref:testing/testing-strategies#[Testing Strategies]
-
-== See Also
-
-* link:/munit/v/1.1.1[MUnit v1.1.1]
+* link:/munit/v/1.2.0/[MUnit 1.2.0]

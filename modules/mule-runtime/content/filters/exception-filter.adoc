@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::filters/exception-filter
+:page-id: mule-runtime@3.8::filters/exception-filter
 :keywords: error handling, exceptions, exception catching, exceptions, filter
 
 *Purpose:* Filters messages according to the type of an exception.

@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::filters/custom-filter
+:page-id: mule-runtime@3.8::filters/custom-filter
 
 *Purpose:* Lets you reference a user-implemented custom filter.
 

@@ -1,8 +1,8 @@
-= Flow References and Properties.
+= Flow References and Properties
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::flows/flow-references
+:page-id: mule-runtime@3.8::flows/flow-references
 :keywords: anypoint studio, esb, flow processing, synchronous, asynchronous, sync, async, flow
 
 [NOTE]

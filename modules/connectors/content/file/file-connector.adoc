@@ -2,8 +2,10 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::connectors:file/file-connector
+:page-id: mule-runtime@3.8::connectors:file/file-connector
 :keywords: anypoint studio, esb, connectors, files, file connector, endpoints
+
+image:file-connector-icon.png[file-connector]
 
 The File connector allows your Mule application to exchange files within the local file system. You can implement the File connector as an inbound endpoint (such as, a message source), or as an outbound endpoint. This endpoint implements a one-way exchange pattern only.
 
@@ -29,15 +31,36 @@ File endpoint configuration consists of two stages:
 
 Open the File properties editor by double-clicking the *File* icon on the Message Flow canvas. Configure the tabs as shown.
 
-=== General Tab
+=== Inbound endpoint
 
-*Inbound endpoint:*
+.Anypoint Studio Visualization (Canvas)
+image:file-connector-inbound.png[file connector inbound]
 
-image:studio-file-gen.png[Studio-file-gen]
 
-*Outbound endpoint:*
+[NOTE]
+====
+The file connector is used as an _inbound_ endpoint when it is a message source for the flow, that is, on the "source" end, where you see the connector icon at left.
+====
 
-image:outb_general_tab.png[outb_general_tab]
+.Configuration XML Default Representation
+`<file:inbound-endpoint path="" responseTimeout="10000" doc:name="File"/>`
+
+.Properties Window Default View
+image:file-connector-studio-file-gen.png[Studio-file-gen]
+
+
+[CAUTION]
+The File connector as inbound endpoint does not process empty (0 bytes) files.
+
+
+=== Outbound endpoint
+
+
+.Anypoint Studio Visualization
+image:file-connector-outbound.png[outb_general_tab]
+
+.XML Default Representation
+`<file:outbound-endpoint path="" responseTimeout="10000" doc:name="File"/>`
 
 [%header,cols="2*"]
 |===
@@ -53,9 +76,13 @@ image:outb_general_tab.png[outb_general_tab]
 |*File Name / Pattern* |_(Applies to outbound File endpoint only)_. Specify a filename or pattern for naming files that are sent from the File endpoint to the connected file system. If not set, the File endpoint uses the same file-naming pattern used for incoming files.
 |===
 
+[NOTE]
+When using a File inbound endpoint to poll a directory, an exception is thrown if the directory to be polled doesn't exist.
+
+
 === Advanced Tab
 
-image:studio-file-adv.png[Studio-file-adv]
+image:file-connector-advanced-tab.png[Studio-file-adv]
 
 [%header,cols="2*"]
 |===
@@ -71,17 +98,33 @@ image:studio-file-adv.png[Studio-file-adv]
 |*Enable default events tracking* |Enable default  xref:mule-runtime:mule-configuration/business-events#[business event]  tracking for this endpoint.
 |===
 
+=== Reconnection Tab
+
+By default, there is no reconnection strategy implemented for you, but you may choose to configure reconnection on a set frequency (*Standard Reconnection*) or via *Custom Reconnection* strategy.
+
+image:file-connector-reconnection-tab.png[reconnection tab]
+
+.New Java class for reconnection properties window
+image:file-connector-custom-reconnection-class-window.png[java class for reconn]
+
 === Transformers Tab
 
-image:studio-file-trans.png[Studio-file-trans]
+image:file-connector-transformers-tab.png[Studio-file-transf-tab]
 
 [%header,cols="2*"]
 |===
 |Property |Description
-|*Request Transformer References* |Enter a list of synchronous transformers that are applied to the request before it is sent to the transport.
-|*Response Transformer References* |Enter a list of synchronous transformers that are applied to the response before it is returned from the transport.
+|*Transformers References: Request* |Enter a list of synchronous transformers that are applied to the request before it is sent to the transport.
+|*Global Transformers* +
+_AND_ +
+*Transformers to be applied* |Reference the global transformers you desire. Enter a list of synchronous transformers that are applied to the response before it is returned from the transport and order them for your needs.
 |===
+
+.Transformer Edit Screen at Right for Byte Array to Serializable
+image:file-connector-configuring-transformers.png[configuring transforms and listing]
 
 == See Also
 
 See the xref:mule-runtime:transports/file-transport-reference#[File Transport Reference] for details on setting the properties for a File endpoint using an XML editor.
+
+Review link:https://docs.mulesoft.com/mule-user-guide/v/3.8/dataweave-flat-file-schemas[DataWeave FlatFile Schemas] doc for information on how to define the file format.

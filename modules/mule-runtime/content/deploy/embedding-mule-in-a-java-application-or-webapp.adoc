@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/embedding-mule-in-a-java-application-or-webapp
+:page-id: mule-runtime@3.8::deploy/embedding-mule-in-a-java-application-or-webapp
 :keywords: deploy, embedding mule
 
 This page describes how to start and stop Mule from a Java application or to embed it in a Web app (such as a JSP or servlet), and how to interact with Mule from your code in both scenarios.
@@ -11,7 +11,7 @@ This page describes how to start and stop Mule from a Java application or to emb
 
 [TIP]
 ====
-Before running Mule in embedded mode in either a Java application or a Web app, be sure to manually update all the required dependencies for your application. The Mule ESB Embedded   Single .jar contains all Mule classes, but you need to include the dependencies manually.
+Before running Mule in embedded mode in either a Java application or a Web app, be sure to manually update all the required dependencies for your application. The Mule Embedded  Single .jar contains all Mule classes, but you need to include the dependencies manually.
 ====
 
 To start Mule from a Java application, call one of its configuration builders.
@@ -37,7 +37,7 @@ SpringXmlConfigurationBuilder configBuilder =
 
 Call the `start` method to start the server:
 
-[source,xml, linenums]
+[source,xml]
 ----
 muleContext.start();
 ----
@@ -124,9 +124,16 @@ For this you have two alternatives:
 
 . Set the following system property:
 +
-[source,xml, linenums]
+[source,xml]
 ----
 -Djava.util.prefs.PreferencesFactory=com.mulesource.licm.pref.MulePreferencesFactory
 ----
-
++
 . If you still experience errors after all this changes, verify that the path where the license is located doesn't contain any space as this prevents the license verification mechanism from finding it.
+
+== See Also
+
+* link:http://training.mulesoft.com[MuleSoft Training]
+* link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
+* link:http://blogs.mulesoft.com[MuleSoft Blogs]
+* link:http://forums.mulesoft.com[MuleSoft Forums]

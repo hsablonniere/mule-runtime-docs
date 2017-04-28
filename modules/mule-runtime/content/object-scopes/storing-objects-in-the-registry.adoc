@@ -2,10 +2,10 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::object-scopes/storing-objects-in-the-registry
+:page-id: mule-runtime@3.8::object-scopes/storing-objects-in-the-registry
 :keywords: anypoint studio, esb, object storing
 
-If you need to store runtime data that is available across the application, you can store the data as objects in the Registry. You can get a handle to the Registry from anywhere that you have access to the MuleContext,  as in most Mule ESB entities. For example, you could store the object as follows:
+If you need to store runtime data that is available across the application, you can store the data as objects in the Registry. You can get a handle to the Registry from anywhere that you have access to the MuleContext,  as in most Mule entities. For example, you could store the object as follows:
 
 [source, java, linenums]
 ----

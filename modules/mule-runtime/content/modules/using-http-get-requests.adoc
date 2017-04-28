@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/using-http-get-requests
+:page-id: mule-runtime@3.8::modules/using-http-get-requests
 :keywords: cxf
 
 CXF has built-in support for understanding GET requests, which use the following format: +

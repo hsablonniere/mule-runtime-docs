@@ -1,13 +1,10 @@
-= Hot Deployment
+= Application Hot Deployment
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/hot-deployment
+:page-id: mule-runtime@3.8::deploy/hot-deployment
 :keywords: esb, deploy, hot deployment
 
-* <<Outline of a Deployment>>
-* <<How Hot Deployment works>>
-* <<Additional Features>>
 
 You can now modify your configuration files and custom classes and have them reloaded without having to restart Mule.
 

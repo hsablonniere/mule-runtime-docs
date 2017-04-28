@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transformers/custom/outboundattachments-annotation
+:page-id: mule-runtime@3.8::transformers/custom/outboundattachments-annotation
 :keywords: annotations, custom java code
 
 This parameter annotation is used to inject a attachments map into your component or transformer that can be used to write attachments to an outgoing messaging without having to deal with the `org.mule.api.message.MuleMessage` directly. This makes your code more portable and easier to test in isolation. +

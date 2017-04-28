@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::components/rest-component-reference
+:page-id: mule-runtime@3.8::components/rest-component-reference
 :keywords: rest, restful, raml, api, apis
 
 *Purpose:* Use a REST API to publish an external RESTful web service.
@@ -31,4 +31,4 @@ image:rest_general.png[rest_general]
 
 * If you want to publish a REST API service, read about the xref:anypoint-platform@latest::api-manager:about-api-manager#[API Manager] to find out about a whole set of tools that will make this easier.
 
-* If you intend to porxy an existing REST API, read xref:anypoint-platform@latest::api-manager:setting-up-an-api-proxy#[Proxying Your API].
+* If you intend to set up a proxy for an existing REST API, read xref:anypoint-platform@latest::api-manager:setting-up-an-api-proxy#[Setting up a proxyProxy].

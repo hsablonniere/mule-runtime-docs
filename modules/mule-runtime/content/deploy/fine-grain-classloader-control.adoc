@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/fine-grain-classloader-control
+:page-id: mule-runtime@3.8::deploy/fine-grain-classloader-control
 :keywords: classloading, loader.override, mule-deploy.properties
 
 Mule artifacts use a particular type of classloaders that provide a way to change the xref:deploy/classloader-control-in-mule#[default classloading behavior.] By default, these fine grain classloaders behave using a parent first schema, but they can be configured  to define how specific classes and packages have to managed during the classloading process.
@@ -40,7 +40,7 @@ Here, is an example of a blocking specification:
 
 `loader.override=-com.example.AnotherProvider`
 
-Note that if a class/package is blocked and its not found in the current fine grain classloader, then a ClassNotFoundException is thrown, even if Mule does have such a class on a system level.
+Note that if a class/package is blocked and it's not found in the current fine grain classloader, then a ClassNotFoundException is thrown, even if Mule does have such a class on a system level.
 
 == Configuring the Fine Grain Classloader
 

@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::administer/clustering/distributed-locking
+:page-id: mule-runtime@3.8::administer/clustering/distributed-locking
 :keywords: distributed locking, cluster
 
 Mule provides the ability to create locks for synchronizing access to resources within Mule components. To manage concurrent access to resources within a server cluster, Mule provides a *lock factory* which custom components – such as custom transformers and DevKit-built components – can access programmatically. 

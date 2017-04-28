@@ -2,20 +2,22 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::connectors:anypoint-connectors
+:page-id: mule-runtime@3.8::connectors:anypoint-connectors
 :keywords: anypoint, components, elements, connectors
 
-*Anypoint Connectors* facilitate easy integration of your Mule applications with third-party APIs and standard integration protocols. Use connectors within your application's flows to send and receive data using a protocol or specific API. 
+*Anypoint Connectors* facilitate integration of Mule applications with third-party APIs and standard integration protocols, providing a means to access web services and resources. Use our connectors within your Mule flows to send and receive data over a protocol or using an API.
 
 == Installing
-Anypoint Connectors are bundled with Anypoint Studio, and there is a large library of additional connectors available for download in link:https://www.mulesoft.com/exchange#!/?types=connector[Anypoint Exchange].
 
-Install connectors using link:https://www.mulesoft.com/exchange#!/?types=connector&sortBy=name[Anypoint Exchange]. For more information, see xref:anypoint-platform@latest::exchange:anypoint-exchange#installing-a-connector-from-anypoint-exchange[Installing Connectors from Anypoint Exchange].
+Some Anypoint Connectors are bundled with Anypoint Studio, while others are available to download at link:https://www.mulesoft.com/exchange#!/?types=connector[Anypoint Exchange].
+
+For more information, see xref:anypoint-platform@latest::exchange:anypoint-exchange#installing-a-connector-from-anypoint-exchange[Installing Connectors from Anypoint Exchange].
 
 == Using a Connector
-You can design and "test drive" a connector in Anypoint Studio using the instructions in xref:anypoint-platform@latest::exchange:anypoint-exchange#installing-a-connector-from-anypoint-exchange[Installing a Connector from Anypoint Exchange].
 
-Import additional connectors into your Studio instance, or create applications using connectors outside of Studio by adding them as Maven dependencies or including connector libraries with your project.
+You can configure and use a connector in Anypoint Studio following its particular setup guidelines, respecting the functionality and limitations of the API or protocol the connector supports. For a tutorial on basic connector usage, see our xref:general@master::anypoint-connector#[Anypoint Connector quickstart].
+
+Import additional connectors into your Studio instance, or manually create applications using connectors, that is outside of the Studio development environment, by adding them as Maven dependencies or including the required connector libraries with your project.
 
 The following shows the relationship of connectors to other components in the Anypoint Platform:
 

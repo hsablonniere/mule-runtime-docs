@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/jaas-module-reference
+:page-id: mule-runtime@3.8::modules/jaas-module-reference
 :keywords: mule, esb, studio, enterprise, security, jaas authentication
 
 The `JaasSimpleAuthenticationProvider` is a security provider that interacts with the Java as a Service (JAAS) Authentication Service.
@@ -113,16 +113,20 @@ This is the security provider type that is used to configure JAAS related functi
 [%header,cols="3*"]
 |===
 |Name
-|Cardinality
-|Description
-
-|security-provider
-|0..1
-|This is the security provider type that is used to configure JAAS related functionality.
-
-|password-encryption-strategy
-|0..*
 |
+Cardinality
+|
+Description
+|
+security-provider
+|
+0..1
+|
+This is the security provider type that is used to configure JAAS related functionality.
+|
+password-encryption-strategy
+|
+0..*|
 |===
 == Security provider
 
@@ -133,34 +137,38 @@ This is the security provider type that is used to configure JAAS related functi
 [%header,cols="5*"]
 |===
 |Name
-|Type
-|Required
-|Default
-|Description
-
-|loginContextName
-|string
-|yes
 |
+Type
 |
-
-|credentials
-|string
-|no
+Required
 |
+Default
 |
-
-|loginConfig
-|string
-|no
+Description
 |
+loginContextName
 |
-
-|loginModule
-|string
-|no
+string
 |
+yes
+|||
+credentials
 |
+string
+|
+no
+|||
+loginConfig
+|
+string
+|
+no
+|||
+loginModule
+|
+string
+|
+no||
 |===
 
 === Child Elements of <security-provider...>

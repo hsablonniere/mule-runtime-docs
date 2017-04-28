@@ -2,14 +2,14 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::mule-configuration/properties-configuration-reference
+:page-id: mule-runtime@3.8::mule-configuration/properties-configuration-reference
 :keywords: anypoint studio, esb, properties, configure, external reference, variables, parameters, global properties, global variables, global parameters
 
 This page provides detailed reference information for property elements in Mule. 
 
 == Global Property
 
-A global property is a named string. It can be inserted in most attribute values using standard (ant-style) Spring placeholders.
+A global property is a named string. It can be inserted in most attribute values using standard (link:http://ant.apache.org/[Apache Ant]-style) Spring placeholders.
 
 === Attributes of global-property
 

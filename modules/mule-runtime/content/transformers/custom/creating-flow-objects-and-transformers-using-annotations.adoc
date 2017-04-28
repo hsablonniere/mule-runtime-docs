@@ -2,14 +2,14 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transformers/custom/creating-flow-objects-and-transformers-using-annotations
+:page-id: mule-runtime@3.8::transformers/custom/creating-flow-objects-and-transformers-using-annotations
 :keywords: customize, annotations, custom flow objects, custom transformers
 
 Annotations now allow flow objects to be created using purely annotations on the flow component. Additionally, there is a new annotation for creating Mule transformers that makes it much easier to define and discover custom transformers.
 
 == Assumptions
 
-This page assumes you are familiar with Java annotations (marked with an @). For a brief overview of annotations, see the  link:http://docs.oracle.com/javase/tutorial/java/annotations/[Java annotations tutorial]. For annotations used in the Anypoint Connector DevKit, see the xref:anypoint-connector-devkit@3.7::annotation-reference#[Annotations Reference].
+This page assumes you are familiar with Java annotations (marked with an @). For a brief overview of annotations, see the  link:http://docs.oracle.com/javase/tutorial/java/annotations/[Java annotations tutorial]. For annotations used in the Anypoint Connector DevKit, see the xref:anypoint-connector-devkit@3.8::annotation-reference#[Annotations Reference].
 
 == Annotations for Flow Components
 

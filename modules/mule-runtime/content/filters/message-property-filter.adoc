@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::filters/message-property-filter
+:page-id: mule-runtime@3.8::filters/message-property-filter
 :keywords: anypoint studio, esb, filters, conditional, gates
 
 *Purpose:* Matches properties on a message.

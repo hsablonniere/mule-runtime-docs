@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::object-scopes/object-scopes
+:page-id: mule-runtime@3.8::object-scopes/object-scopes
 :keywords: anypoint studio, esb, objects, scopes, cardinality
 
 

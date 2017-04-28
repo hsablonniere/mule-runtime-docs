@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::administer/clustering/3-deploying-an-application
+:page-id: mule-runtime@3.8::administer/clustering/3-deploying-an-application
 :keywords: deploy, cloud, on premise, on premises, cloudhub, deploying
 
 [TIP]

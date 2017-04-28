@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::connectors:pop3/pop3-connector
+:page-id: mule-runtime@3.8::connectors:pop3/pop3-connector
 :keywords: email, transport, pop3, connector
 
 The POP3 connector, which is configurable only as an inbound endpoint, that is, as a message source with a one-way exchange pattern. This connector implements a transport channel that enables your Mule application to retrieve email from a POP3 email server.

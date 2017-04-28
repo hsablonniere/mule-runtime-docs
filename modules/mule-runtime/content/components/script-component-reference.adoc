@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::components/script-component-reference
+:page-id: mule-runtime@3.8::components/script-component-reference
 :keywords: anypoint studio, esb, component, legacy code, script, java, javascript, python, ruby, groovy, custom code
 
 In spite of the rich selection of elements available in Mule, you may find yourself in need of creating custom code to carry out all or part of a complex task. The Script Component is the ideal versatile tool to fall back on for these cases. The Script Component is also handy for when you're modernizing legacy systems, as you can simply throw the old lines of code into a scripting component instead of having to reengineer the code's behavior through a series of different Mule components (this is not ideal from a debugging and maintenance perspective, though). When using the Script component, you can select any of the following scripting engines: Groovy, JavaScript, Python, or Ruby. While Java is not available in the Script Component, there's a separate specialized Java component that works similarly. Java is handled differently in a separate element because Java is the native language in which Mule is coded.
@@ -235,12 +235,10 @@ The example below uses the link:http://en.wikipedia.org/wiki/Change-making_pro
 <http:listener-config name="http_conf" host="localhost" port="8081" doc:name="HTTP Response Configuration"/>
 <flow name="greedy">
     <http:listener path="/" doc:name="HTTP Connector" config-ref-inbound="http_conf"/>
-    <http:body-to-parameter-map-transformer />
-     
+    <http:body-to-parameter-map-transformer />   
     <set-payload value="#[payload['amount']]" />
     <transformer ref="StringToNumber" />
     <transformer ref="DollarsToCents"/>
-         
         <choice>
             <when expression="payload.currency == 'USD'">
                 <scripting:component doc:name="USD Currency Script">
@@ -343,7 +341,7 @@ result = "[" + c.result + "]"
 
 == See Also
 
-* For more information see the Mule ESB page xref:modules/scripting-module-reference#[Scripting Module]
+* For more information see the Mule page xref:modules/scripting-module-reference#[Scripting Module]
 * Read more about the xref:components/javascript-component-reference#[JavaScript Component]
 * Read more about the xref:components/ruby-component-reference#[Ruby Component]
 * Read more about the xref:components/groovy-component-reference#[Groovy Component]

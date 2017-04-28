@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::mule-configuration/mule-versus-web-application-server
+:page-id: mule-runtime@3.8::mule-configuration/mule-versus-web-application-server
 :keywords: esb, security, jboss, tomcat, web server, app server, application server, deploy, performance
 
 A question that commonly arises about Mule: "_How does Mule compare to JBoss, Tomcat, or other web application servers?_"
@@ -84,5 +84,5 @@ If you need to implement a user interface, a web application server is generally
 == See Also
 
 * xref:anypoint-studio@6::download-and-launch-anypoint-studio#[Download, then install and launch Anypoint Studio].
-* Investigate different xref:deploy/deployment-scenarios#[Deployment Scenarios].
+* Browse different xref:deploy/deployment-scenarios#[Mule Runtime Standalone Deployment Scenarios].
 * Refer to the detailed link:http://www.mulesoft.com/understanding-apache-tomcat[Apache Tomcat resource center].

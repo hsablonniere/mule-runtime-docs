@@ -2,13 +2,13 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::validators/validations-module
+:page-id: mule-runtime@3.8::validators/validations-module
 :keywords: validate, validations, filter, if, assert, exception, confirm
 
 The Validations module provides an easy out-of-the-box way to verify that the content of a message in your flow matches a given set of criteria. The main advantage this has over using xref:filters/filters#[Filters] is traceability, as filters all raise identical exceptions, making it hard for you to know where the exception was caused. Validators, on the other hand, raise an exception with a meaningful message attached. You can optionally customize this message and even the type of exception you want it to throw.
 
 [NOTE]
-This feature is supported by the Mule runtime as of xref:general@master::release-notes:mule-runtime/3.7.0-release-notes#[Mule ESB 3.7.0] in both Community and Enterprise editions. However, Studio support only became available starting with the September 2015 release.
+This feature is supported by the Mule runtime as of xref:general@master::release-notes:mule-runtime/3.7.0-release-notes#[Mule  3.7.0] in both Community and Enterprise editions. However, Studio support only became available starting with the September 2015 release.
 
 == Basics
 
@@ -532,7 +532,7 @@ On any of the validators described above, you can customize the type of exceptio
 
 Click on the `Customize` tab, then set the message and the exception type for your validator.
 
-image:<missing>validator_bustomize.png[validator]
+image:validator_bustomize.png[validator]
 
 The above setting overrides the global ExceptionFactory configured in the validation config. `NotAnAdultException` is expected to have a constructor taking one String argument, otherwise it will fail (that will be validated at start time).
 
@@ -678,22 +678,7 @@ The example above includes an `all` validator that simultaneously validates that
 * That the email address is valid
 * That the social security number has the correct size and matches a regular expression
 
-== Building with Maven
-When building an application with Maven, the following dependency needs to be added to the application's pom.xml file:
-
-[source,xml,linenums]
-----
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-module-validation</artifactId>
-    <version>${mule.version}</version>
-</dependency>
-----
-
-This page assumes that you have `<mule.version></mule.version>` property defined in your `pom.xml`. +
-If not, you can replace `${mule.version}` with the Mule runtime version that is being used.
-
-
 == Go Further
-* See an in depth link:http://blogs.mulesoft.com/dev/tech-ramblings/introducing-the-validations-module/[blogpost] about this
+
+* See an in depth link:http://blogs.mulesoft.com/dev/tech-ramblings/introducing-the-validations-module/[blogpost] about this.
 * Read about xref:filters/filters#[Filters] in Mule

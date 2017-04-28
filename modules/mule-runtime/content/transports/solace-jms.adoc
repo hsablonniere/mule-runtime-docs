@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transports/solace-jms
+:page-id: mule-runtime@3.8::transports/solace-jms
 :keywords: anypoint studio, esb
 
 The following example demonstrates how to configure Mule to use link:http://solacesystems.com/solutions/messaging-middleware/jms/[Solace JMS].

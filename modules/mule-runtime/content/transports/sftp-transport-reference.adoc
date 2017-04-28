@@ -2,15 +2,61 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transports/sftp-transport-reference
+:page-id: mule-runtime@3.8::transports/sftp-transport-reference
 :keywords: anypoint studio, connectors, files transfer, ftp, sftp, endpoints
 
-The Secure Shell (SSH) File Transfer Protocol (SFTP) transport allows files to be read and written to and from directories over SFTP. Unlike the Virtual File System (VFS) transport, it can handle large files because it streams message payloads. The SFTP transport can be used as an inbound or an outbound endpoint. Files can be retrieved from an SFTP server and processed as Mule messages, or Mule messages can be uploaded as files to an SFTP server.  Mule uses the link:http://www.jcraft.com/jsch/[JCraft library] for SFTP SSH. 
+The Secure Shell (SSH) File Transfer Protocol (SFTP) transport allows files to be read and written to and from directories over SFTP. Unlike the Virtual File System (VFS) transport, it can handle large files because it streams message payloads. The SFTP transport can be used as an inbound or an outbound endpoint. Files can be retrieved from an SFTP server and processed as Mule messages, or Mule messages can be uploaded as files to an SFTP server.  Mule uses the link:http://www.jcraft.com/jsch/[JCraft library] for SFTP SSH.
 
-*Notes*:
+== SFTP Accepts SSH Known Hosts File
+
+In Mule 3.8 and newer, an SSH known_hosts file may be passed to SFTP. The format for the SSH `known_hosts` file is standard to your operating system. Refer to your OS documentation for details. The system property `mule.sftp.knownHostsFile` has been removed in Mule 3.8 and newer. Instead, the name of the file with the known hosts must now be referenced from  the `mule-config.xml` file, using the `knownHostsFile` attribute of the connector or the endpoints.​ The `mule-config.xml` file is in the `$MULE_HOME/apps/default` directory.
+
+The following example uses outbound SFTP to ensure that the hosts are known in connectors and endpoints:
+
+[source,xml,linenums]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:spring="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:sftp="http://www.mulesoft.org/schema/mule/sftp"z
+      xsi:schemaLocation="
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+          http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd">
+
+  <spring:beans>
+        <spring:import resource="sftp-properties.xml"/>
+    </spring:beans>
+
+  <sftp:connector name="sftpConnector" />
+
+	<sftp:connector name="sftpConnectorWithKnownHosts"
+        knownHostsFile="src/test/resources/my_known_hosts" />
+
+    <flow name="knownHostsInConnector">
+        <sftp:outbound-endpoint
+            address="sftp://${USER1_NAME}@${SFTP_HOST}:${SFTP_PORT}/~/tempdir2-test-outbound"
+            connector-ref="sftpConnectorWithKnownHosts" name="outboundEndpoint1">
+        </sftp:outbound-endpoint>
+    </flow>
+
+    <flow name="knownHostsInEndpoint">
+        <sftp:outbound-endpoint
+            address="sftp://${USER1_NAME}@${SFTP_HOST}:${SFTP_PORT}/~/tempdir2-test-outbound"
+            connector-ref="sftpConnector" name="outboundEndpoint2"
+            knownHostsFile="src/test/resources/my_known_hosts">
+        </sftp:outbound-endpoint>
+    </flow>
+</mule>
+----
+
+This example sets the USER1_NAME, SFTP_HOST, and SFTP_PORT values in the `sftp-properties.xml` file.
+
+== Overview
 
 * Mule 3.7 and newer supports SFTP retries. 
-* In code examples in this guide, `spring-beans-current.xsd` is a placeholder. To locate the correct version, see  http://www.springframework.org/schema/beans/ -- Mule 3.7 and newer supports Spring 4.1.6.
+* In code examples in this guide, `spring-beans-current.xsd` is a placeholder. To locate the correct version, see  http://www.springframework.org/schema/beans/  
 
 [%header%autowidth.spread]
 |===
@@ -24,8 +70,8 @@ The Secure Shell (SSH) File Transfer Protocol (SFTP) transport allows files to b
 |Retries |image:error.png[checkmark icon]
 |MEPs |`one-way`, `request-response`
 |Default MEP |`one-way`
-|Maven Artifact |org.mule.transports:mule-transport-sftp
-|SFTP |http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/transport/sftp/package-summary.html[JavaDoc] http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_sftp/namespace-overview.html[SchemaDoc]
+|Maven Artifact |org.mule.transport:mule-transport-sftp
+|SFTP |link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/transport/sftp/package-summary.html[JavaDoc] link:http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_sftp/namespace-overview.html[SchemaDoc]
 |===
 
 == Namespace and Syntax
@@ -43,7 +89,7 @@ xmlns:sftp="http://www.mulesoft.org/schema/mule/sftp"
 
 [source, code, linenums]
 ----
-http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/3.7/mule-sftp.xsd
+http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/3.8/mule-sftp.xsd
 ----
 
 === Schema
@@ -128,7 +174,7 @@ To include the SFTP transport in your configuration:
 
 . Define a connector:
 
-[source, xml]
+[source, xml, linenums]
 ----
 <sftp:connector name="sftp-default"/>
 ----
@@ -158,7 +204,7 @@ One-way and request-response exchange patterns are supported. If an exchange pat
 
 This is a polling transport. The inbound endpoint for SFTP uses polling to look for new files. The default is to check every second, but it can be changed via the 'pollingFrequency' attribute on the inbound endpoint.
 
-Streaming is supported by the SFTP transport and is enabled by default. Transactions are not currently supported.
+Streaming is supported by the SFTP transport and is enabled by default.
 
 == Example Configurations
 
@@ -355,7 +401,7 @@ No child elements for `outbound-endpoint`.
 
 == Javadoc API Reference
 
-http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/transport/sftp/package-summary.html[Javadoc for SFTP Transport]
+link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/transport/sftp/package-summary.html[Javadoc for SFTP Transport]
 
 == Maven
 
@@ -371,15 +417,8 @@ This transport is part of the following Maven module:
 
 == Best Practices
 
-Place your SFTP login credentials in a file and reference the file in the Mule configuration.
+Place your SFTP login credentials in a file and reference them in the Mule configuration.
 
 == Notes
 
-To read about the differences between FTP, SFTP, FTPS, and SCP, look http://geekswithblogs.net/bvamsi/archive/2006/03/23/73147.aspx[here].
-
-== See Also
-
-* link:http://training.mulesoft.com[MuleSoft Training]
-* link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
-* link:http://blogs.mulesoft.com[MuleSoft Blogs]
-* link:http://forums.mulesoft.com[MuleSoft's Forums]
+To read about the differences between FTP, SFTP, FTPS, and SCP, look link:http://geekswithblogs.net/bvamsi/archive/2006/03/23/73147.aspx[here].

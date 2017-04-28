@@ -2,14 +2,14 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/jboss-transaction-manager-reference
-:keywords: mule, studio, jboss, bpms
+:page-id: mule-runtime@3.8::modules/jboss-transaction-manager-reference
+:keywords: mule, esb, studio, jboss, bpms
 
 This module enables Mule to use the JBoss transaction manager (previously Arjuna) to configure xref:transactions/xa-transactions#[XA transactions]. Developers can configure one Transaction Manger per Mule instance. For more information, see link:http://www.jboss.org/jbosstm/[JBoss Transactions], xref:deploy/deploying-mule-to-jboss#[Deploying Mule to JBoss], xref:transactions/transaction-management#[Transaction Management], xref:modules/jboss-jbpm-module-reference#[JBoss jBPM Module Reference].
 
 == Configuration
 
-To configure an instance of the JBoss transaction manager within Mule, add this element to your Mule XML config file. You can configure arbitrary properties on the transaction manager that are passed on to the underlying transaction manager. For example:
+To configure an instance of the JBoss transaction manager within Mule, add this element to your Mule XML config file. You can configure arbitrary properties on the transaction manager that will be passed on to the underlying transaction manager. For example:
 
 [source, xml, linenums]
 ----

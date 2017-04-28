@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::mule-configuration/notes-on-mule-3.0-schema-changes
+:page-id: mule-runtime@3.8::mule-configuration/notes-on-mule-3.0-schema-changes
 
 The following changes have been made to schemas within Mule 3.0.  For details on the schemas themselves, consult the xref:mule-configuration/schema-documentation#[schemadoc] added with Mule 3.0.
 
@@ -11,7 +11,7 @@ The following changes have been made to schemas within Mule 3.0.  For details o
 * The `synchronous` attribute has been removed in favor of the xref:endpoints/endpoint-configuration-reference#[exchange-pattern] attribute.
 * xref:endpoints/endpoint-configuration-reference#[Dynamic endpoints] can be designated on most transports.
 * Transformers, routers, filters, and other constructs that affect the processing of messages are now all Message Processors and can be used more flexibly inside a Mule configuration.
-* In addition to services, message processing can be configured using xref:flows/using-flows-for-service-orchestration#[flows].
+
 == BPM
 
 * xref:modules/bpm-module-reference#[BPM] now includes the element `jbpm-connector` to specify a jBpm connector.

@@ -2,14 +2,17 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/configuring-mule-for-standalone-deployment-scenarios
-:keywords: anypoint, esb, on premises, on premise, amc
+:page-id: mule-runtime@3.8::deploy/configuring-mule-for-standalone-deployment-scenarios
+:keywords: anypoint, on premises, on premise, amc
 
 This section describes configuring Mule to run as a Linux or Unix daemon, a Windows service, or from a script.
+
+
+[NOTE]
+This section deals with deploying to standalone instances of the Mule runtime. To take full advantage of managing and monitoring features, you can deploy to the same Mule runtime via the xref:anypoint-platform@latest::runtime-manager:index#[Runtime Manager]. See xref:anypoint-platform@latest::runtime-manager:deployment-strategies#[Deployment Strategies] for a deeper look at the different deployment alternatives offered by the platform.
 
 * xref:deploy/configuring-mule-as-a-linux-or-unix-daemon#[Configuring Mule as a Linux or Unix Daemon]
 
 * xref:deploy/configuring-mule-as-a-windows-service#[Configuring Mule as a Windows Service]
 
 * xref:deploy/configuring-mule-to-run-from-a-script#[Configuring Mule to Run From a Script]
-

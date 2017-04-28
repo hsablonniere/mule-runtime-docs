@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/deploying-mule-to-weblogic
+:page-id: mule-runtime@3.8::deploy/deploying-mule-to-weblogic
 :keywords: deploy, deploying, weblogic
 
 These instructions assume you have downloaded and installed WebLogic Application Server version 10.3. Note that WebLogic 8.x and 9.x are also supported, but these instructions are specific to version 10.3 of Oracle WebLogic.
@@ -11,7 +11,7 @@ These instructions assume you have downloaded and installed WebLogic Application
 
 == Deploying a web application with Mule in WebLogic
 
-Carry out the following steps, explained in detail below:
+You must carry out the following steps, explained in detail below:
 
 . Create a WAR file with your application.
 . _Required._ Modify your <<Modify your WebLogic Configuration>> by adding elements to the *weblogic.xml* file.

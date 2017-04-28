@@ -1,19 +1,20 @@
-= Deployment Scenarios
+= Embedded Mule Deployment Scenarios
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/deployment-scenarios
+:page-id: mule-runtime@3.8::deploy/deployment-scenarios
 :keywords: deploy, deploying, cloudhub, on premises, on premise
 
 [IMPORTANT]
 This document covers the ways in which Mule runtime can be used to deploy applications in a standalone way. To take full advantage of the available management and monitoring features, you should xref:anypoint-platform@latest::runtime-manager:deploying-to-your-own-servers#[deploy to your runtimes] via the link:anypoint.mulesoft.com[Anypoint Platform]. Read how this and other deployment strategies work xref:anypoint-platform@latest::runtime-manager:deployment-strategies#[here].
+
 
 The table below lists the standalone ways in which you can deploy a Mule runtime on premises, and some of the characteristics of each method. 
 
 [%header%autowidth.spread]
 |===
 |Deployment Mode |Container |Pros |Cons |HA |MMC
-|Standalone |Mule ESB a|
+|Standalone |Mule Runtime a|
 * Uses the Mule Deployment Model
 * Can run multiple apps
 * Supports hot deployment
@@ -36,18 +37,18 @@ a|
 |Not Supported |Supported*
 |===
 
-*When Mule is embedded in some other container, the link:/mule-management-console/v/3.7[Mule Management Console] cannot perform auto-discovery or server restarts.
+*When Mule is embedded in another container, the link:/mule-management-console/v/3.7[Mule Management Console] cannot perform auto-discovery or server restarts.
 
 [TIP]
 Learn about other xref:anypoint-platform@latest::runtime-manager:deployment-strategies#[deployment strategies] that leverage link:anypoint.mulesoft.com[Anypoint Platform].
 
 == Running Mule in Standalone Mode
 
-The recommended approach is to run Mule Standalone from the command prompt, as a service or daemon, or from a script. As the simplest architecture, it reduces the number of points where errors can occur. It's typically best for performance as well, since it reduces the number of layers and eliminates the inherent performance impact of an application server on the overall solution.
+The most minimal approach is to run Mule Standalone from the command prompt, as a service or daemon, or from a script. As the simplest architecture, it reduces the number of points where errors can occur. It's typically best for performance as well, since it reduces the number of layers and eliminates the inherent performance impact of an application server on the overall solution.
 
 You can also run multiple applications side-by-side in a Mule instance using the Mule Deployment Model. This model supports live deployment and hot redeployment of applications.  Further, Mule Standalone fully support for xref:administer/clustering/mule-high-availability-ha-clusters#[Mule High Availability] module and use of the link:/mule-management-console/v/3.7[Mule management console].
 
-For more information on running Mule standalone, see xref:deploy/mule-deployment-model#[Mule Deployment Model].
+For more information on deploing Mule apps, see xref:deploy/mule-deployment-model#[Mule App Deployment Model].
 
 [NOTE]
 ====

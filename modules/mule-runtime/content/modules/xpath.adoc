@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/xpath
+:page-id: mule-runtime@3.8::modules/xpath
 :keywords: anypoint studio, esb, xpath
 
 *_Mule 3.6.0 and above_*
@@ -138,3 +138,25 @@ xpath3('/*:/contacts/')
 ----
 
 ====
+
+=== XQuery
+
+The xquery-transformer element retains the same syntax as in previous versions. You can select the XQuery version using xquery version in the XQuery script, as shown below:
+
+[source,xml,linenums]
+----
+<mxml:xquery‐text>
+<![CDATA[
+  xquery version "3.0";
+----
+
+XQuery 3.0 introduces support for several new features in the XQuery transformer, such as using an XQuery script to operate on multiple documents at once. For more information, see xref:modules/xquery-transformer#[XQuery Transformer].
+
+
+== See Also
+
+* link:http://training.mulesoft.com[MuleSoft Training]
+* link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
+* link:http://blogs.mulesoft.com[MuleSoft Blogs]
+* link:http://forums.mulesoft.com[MuleSoft Forums]
+

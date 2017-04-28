@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::filters/regex-filter
+:page-id: mule-runtime@3.8::filters/regex-filter
 :keywords: anypoint studio, esb, filters, conditional, gates, regex, regular expression
 
 *Purpose:* Matches string messages against a regular expression.

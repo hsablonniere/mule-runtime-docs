@@ -2,16 +2,16 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::maven/using-maven-with-mule
-:keywords: studio, maven, esb, version control, dependencies, libraries
+:page-id: mule-runtime@3.8::maven/using-maven-with-mule
+:keywords: studio, maven, esb, version control, dependencies, libraries, runtime
 
 http://maven.apache.org/[Maven] is a project management utility that you can use to develop projects in Mule. Mule provides built-in Maven functionality, including the features listed below.
 
 *In Anypoint Studio:*
 
-* xref:anypoint-studio@5::maven/building-a-mule-application-with-maven-in-studio#[Building a Mule application with Maven in Studio]
-* link:/mule-user-guide/v/3.7/enabling-maven-support-for-a-studio-project[Enabling Maven support for an existing Studio project]
-* xref:anypoint-studio@5::maven/importing-a-maven-project-into-studio#[Importing a Maven project into Studio]
+* xref:anypoint-studio@6::maven/building-a-mule-application-with-maven-in-studio#[Building a Mule application with Maven in Studio]
+* xref:anypoint-studio@6::maven/enabling-maven-support-for-a-studio-project#[Enabling Maven support for an existing Studio project]
+* xref:anypoint-studio@6::maven/importing-a-maven-project-into-studio#[Importing a Maven project into Studio]
 
 *In Mule:*
 
@@ -24,16 +24,16 @@ This page provides an overview of the benefits and options for working with Mave
 
 Full list of Mule-Maven documentation pages:
 
-
-* link:/mule-user-guide/v/3.7/using-maven-in-mule-esb[Using Maven in Mule ESB]
+* xref:anypoint-studio@6::maven/using-maven-in-anypoint-studio#[Using Maven in Anypoint Studio]
+** xref:anypoint-studio@6::maven/maven-support-in-anypoint-studio#[Maven Support in Anypoint Studio]
+** xref:anypoint-studio@6::maven/building-a-mule-application-with-maven-in-studio#[Building a Mule Application with Maven in Studio]
+** xref:anypoint-studio@6::maven/enabling-maven-support-for-a-studio-project#[Enabling Maven Support for a Studio Project]
+** xref:anypoint-studio@6::maven/importing-a-maven-project-into-studio#[Importing a Maven Project into Studio]
+* link:/mule-user-guide/v/3.8/using-maven-in-mule-esb[Using Maven in Mule Runtime]
 ** xref:maven/configuring-maven-to-work-with-mule-esb#[Configuring Maven to Work with Mule]
 ** xref:maven/maven-tools-for-mule-esb#[Maven Tools for Mule]
 ** xref:maven/mule-maven-plugin#[Mule Maven Plugin]
 * xref:maven/maven-reference#[Maven Reference]
-
-[TIP]
-For info on how to use Maven in the context of Anypoint Sutio, MuleSoft's IDE for developing integration applications, see xref:anypoint-studio@5::maven/using-maven-in-anypoint-studio#[Use Maven in Anypoint Studio]
-
 
 == Assumptions
 
@@ -53,17 +53,15 @@ Though highly recommended, a project manager like Maven is not strictly necessar
 
 Depending on where you are with your project and what your goals are, you can:
 
-* **Build and run a new Maven project in Mule Studio.** If you're starting from scratch and you want to use Maven to build your project, begin by creating a new Maven-based project in Studio. You can then run the project with Maven from the command line, or run it directly from Studio. See xref:anypoint-studio@5::maven/building-a-mule-application-with-maven-in-studio#[Building a Mule Application with Maven in Studio] for a step-by-step guide demonstrating how to create, manage, and run a Mule project with Maven.
+* **Build and run a new Maven project in Mule Studio.** If you're starting from scratch and you want to use Maven to build your project, begin by creating a new Maven-based project in Studio. You can then run the project with Maven from the command line, or run it directly from Studio. See xref:anypoint-studio@6::maven/building-a-mule-application-with-maven-in-studio#[Building a Mule Application with Maven in Studio] for a step-by-step guide demonstrating how to create, manage, and run a Mule project with Maven.
 
-* *Create and run a new Maven in Mule.* If you want to use Maven to create your project for Mule (outside Studio), use *Maven Tools for Mule*. This is a Mule plugin that makes it extremely easy to create a Mule application by running Maven with a few simple parameters. You need to add dependencies for any xref:connectors:anypoint-connectors#[Anypoint Connectors] that you want to use in your project and, if you are an Enterprise customer, configure your `settings.xml` file to point to the MuleSoft Enterprise repository. To enable access, click *Help* > *Install New Software* and in *Work with*, click *Anypoint Addons Update Site* > *Maven Tools for Mule*. Click *Next* and follow the install prompts: +
-
+* *Create and run a new Maven in Mule.* If you want to use Maven to create your project for Mule (outside Studio), use *Maven Tools for Mule*. This is a Mule plugin that makes it extremely easy to create a Mule application by running Maven with a few simple parameters. You need to add dependencies for any xref:connectors:anypoint-connectors#[Anypoint Connectors] that you want to use in your project and, if you are an Enterprise customer, configure your `settings.xml` file to point to the MuleSoft Enterprise repository. To enable access, click *Help* > *Install New Software* and in *Work with*, click *Anypoint Addons Update Site* > *Maven Tools for Mule*. Click *Next* and follow the install prompts:
 +
-image:maventoolsformule.png[MavenToolsForMule] +
-+
+image:maventoolsformule.png[MavenToolsForMule]
 
-* **Import an existing Maven project into Studio.** If you already have a Maven project you want to work on further with Studio, use the built-in functionality in Studio to import the pom.xml file using the `studio:studio` goal. Access xref:anypoint-studio@5::maven/importing-a-maven-project-into-studio#[Importing a Maven Project into Studio] for details. +
+* **Import an existing Maven project into Studio.** If you already have a Maven project you want to work on further with Studio, use the built-in functionality in Studio to import the pom.xml file using the `studio:studio` goal. Access xref:anypoint-studio@6::maven/importing-a-maven-project-into-studio#[Importing a Maven Project into Studio] for details. 
 
-* **Mavenize an existing Studio project.** If you have built a project in Studio and want to convert it to a Maven project, you can use the built-in support in Studio to "Mavenize" the project. Access link:/mule-user-guide/v/3.7/enabling-maven-support-for-a-studio-project[Enabling Maven Support for a Studio Project] for details.
+* **Mavenize an existing Studio project.** If you have built a project in Studio and want to convert it to a Maven project, you can use the built-in support in Studio to "Mavenize" the project. Access xref:anypoint-studio@6::maven/enabling-maven-support-for-a-studio-project#[Enabling Maven Support for a Studio Project] for details.
 
 == Tips
 
@@ -72,13 +70,12 @@ image:maventoolsformule.png[MavenToolsForMule] +
 * **Update your POM file and settings.xml if necessary:** If you create Maven projects from the command line using archetypes, you need to manage your POM file manually, and in some cases, adjust your `settings.xml` file to point to the MuleSoft Enterprise repository and supply credentials. In some cases, even if you manage your project with Studio, you may need to make manual adjustments to your POM as well. See the xref:maven/configuring-maven-to-work-with-mule-esb#[configuration instructions] for more information. +
 
 * *SNAPSHOT version:* Use SNAPSHOT to identify versions of your project as you work toward producing a stable product you intend to release. For example, you can build a 1.0.0-SNAPSHOT version of your project, test functionality, make changes etc. until you are ready to release it as version 1.0.0. Then you can build upon using a new version, 1.1.0-SNAPSHOT.
-
 +
 image:snapshot.png[snapshot]
 
 == See Also
 
-* Learn more about xref:anypoint-studio@5::maven/maven-support-in-anypoint-studio#[adjusting your Studio Preferences to work with Maven]. 
-* Learn more about xref:anypoint-studio@5::maven/importing-a-maven-project-into-studio#[importing Maven projects into Studio] or link:/mule-user-guide/v/3.7/enabling-maven-support-for-a-studio-project["mavenizing" existing Studio projects].
+* Learn more about xref:anypoint-studio@6::maven/maven-support-in-anypoint-studio#[adjusting your Studio Preferences to work with Maven]. 
+* Learn more about xref:anypoint-studio@6::maven/importing-a-maven-project-into-studio#[importing Maven projects into Studio] or xref:anypoint-studio@6::maven/enabling-maven-support-for-a-studio-project#["mavenizing" existing Studio projects].
 * Using Maven outside of Studio? Refer to these instructions for xref:maven/configuring-maven-to-work-with-mule-esb#[configuring your Maven installation] to point to the necessary repositories.
 * Access the xref:maven/maven-reference#[Maven reference documentation].

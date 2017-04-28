@@ -2,12 +2,12 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transactions/using-bitronix-to-manage-transactions
+:page-id: mule-runtime@3.8::transactions/using-bitronix-to-manage-transactions
 :keywords: anypoint studio, studio, mule esb, bitorinox
 
 *_Enterprise_*
 
-Prior to version 3.5.0, Mule used the JBoss transaction manager to configure xref:transactions/xa-transactions#[XA transactions]. As of version 3.5.0, link:https://github.com/mulesoft/btm[Bitronix] is the recommended transaction manager for Mule Enterprise, since it provides out-of-the-box support XA transactions recovery.
+Prior to version 3.5.0, Mule used the JBoss transaction manager to configure xref:transactions/xa-transactions#[XA transactions]. As of version 3.5.0, link:https://github.com/bitronix/btm[Bitronix] is the recommended transaction manager for Mule Enterprise, since it provides out-of-the-box support XA transactions recovery.
 
 [WARNING]
 ====

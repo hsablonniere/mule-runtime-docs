@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::components/groovy-component-reference
+:page-id: mule-runtime@3.8::components/groovy-component-reference
 :keywords: expression component, native code, legacy code, groovy
 
 In spite of the rich selection of elements available in Mule, you may find yourself in need to put together some custom code to carry out part of a complex task, if you're comfortable coding in Groovy, then the Groovy Component is the ideal versatile tool to fall back on for these cases. Mule also includes also equivalent scripting components for other languages. The Groovy Component is also handy for when you're modernizing legacy systems, as you can simply throw the old lines of code into a component instead of having to reengineer the code's behavior through a series of different Mule components (this is not ideal from a debugging and maintenance perspective, though).
@@ -54,15 +54,15 @@ The example below uses two properties and executes a Groovy code that's written 
 [source, xml, linenums]
 ----
 <flow name="groovyTransformerWithParameters">
-        <script:transformer name="stringReplaceWithParams">
-                <script:script engine="groovy">
-                    <property key="oldStr" value="l" />
-                    <property key="newStr" value="x" />
-                    <script:text>
-                        return payload.toString().replaceAll("$oldStr", "$newStr")
-                     </script:text>
-                </script:script>
-        </script:transformer>
+    <script:transformer name="stringReplaceWithParams">
+            <script:script engine="groovy">
+                <property key="oldStr" value="l" />
+                <property key="newStr" value="x" />
+                <script:text>
+                    return payload.toString().replaceAll("$oldStr", "$newStr")
+                 </script:text>
+            </script:script>
+    </script:transformer>
 </flow>
 ----
 
@@ -87,7 +87,7 @@ The example below uses the link:http://en.wikipedia.org/wiki/Change-making_pro
 </flow>
 ----
 
-The example below uses the link:http://en.wikipedia.org/wiki/Change-making_problem[“Greedy Coin Changer” algorithm] to transform one currency into another.  It uses some transformers to transform the input data and then applies a Groovy algorithm to convert the currency. 
+The example below uses the link:http://en.wikipedia.org/wiki/Change-making_problem[“Greedy Coin Changer” algorithm] to transform one currency into another. It uses some transformers to transform the input data and then applies a Groovy algorithm to convert the currency. 
 
 [source, groovy, linenums]
 ----
@@ -122,7 +122,11 @@ switch (currency) {
 ----
 
 
-== Go Further
+== See Also
 
 * Refer to the generic xref:components/script-component-reference#[Script component reference page] to see how a script works with one-way and request-response connectors.
-* For more information see the Mule ESB page xref:modules/scripting-module-reference#[Scripting Module].
+* For more information see xref:modules/scripting-module-reference#[Scripting Module].
+* link:http://training.mulesoft.com[MuleSoft Training]
+* link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
+* link:http://blogs.mulesoft.com[MuleSoft Blogs]
+* link:http://forums.mulesoft.com[MuleSoft Forums]

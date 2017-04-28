@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::maven/creating-example-archetypes
+:page-id: mule-runtime@3.8::maven/creating-example-archetypes
 :keywords: customize, custom archetypes
 
 Mule provides Maven archetypes that you can use as code templates for your Mule projects. These templates include a set of implementation notes and "todo" pointers that help you get started quickly. The Mule example archetype helps you generate a tailored boilerplate example project in seconds. For more information on using Maven, see xref:maven/using-maven-with-mule#[Using Maven].
@@ -141,7 +141,6 @@ You should provide an accurate description of the example with any high-level de
 
 The version of Mule you want to use for your example. This defaults to the archetype version passed in on the command line.
 
-
 === Which Mule transports do you want to include in this project?
 
 A comma-separated list of the transports you plan to use in this example (such as HTTP and VM). This adds the namespaces for those transports to the configuration file.
@@ -176,10 +175,3 @@ The following options can be passed in:
 |artifactId |-DartifactId=myMuleExample |mule-application-<artifactId>
 |version |-Dversion=2.2-SNAPSHOT |<muleVersion>
 |===
-
-== See Also
-
-* link:http://training.mulesoft.com[MuleSoft Training]
-* link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
-* link:http://blogs.mulesoft.com[MuleSoft Blogs]
-* link:http://forums.mulesoft.com[MuleSoft Forums]

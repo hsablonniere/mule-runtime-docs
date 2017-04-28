@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::shared-resources/sharing-custom-configuration-fragments
+:page-id: mule-runtime@3.8::shared-resources/sharing-custom-configuration-fragments
 :keywords: anypoint studio, share configuration
 
 Thanks to its element naming and referencing strategy, the Mule configuration mechanism supports re-using fragments of applications within teams. This is very convenient for sharing complex, repetitive, or critical bits of configuration.
@@ -22,7 +22,7 @@ Remarks
 
 |Connector configurations |Between applications |A connector that needs a complex configuration, for example with specific transport level details, is a great candidate for re-use.
 |Endpoint definitions |Between applications |Defining global endpoints facilitates testing but also promotes re-use as they become sharable.
-|Flows |Between applications |It can make sense for a service to exist in several Mule applications. In that case, sharing a flow is the best way to go. If this flow is configured to rely on global endpoints, the application using this flow retains full control on what protocol  actually is used.
+|Flows |Between applications |It can make sense for a service to exist in several Mule applications. In that case, sharing a flow is the best way to go. If this flow is configured to rely on global endpoints, the application using this flow retains full control on what protocol is actually used.
 |Pre-configured transformers a|
 Between flows within the same application
 
@@ -70,7 +70,7 @@ Then, when we want to run a message through that chain of transformers, we call 
 </flow>
 ----
 
-If this flow-ref is in the same application, no further configuration is needed to call the subflow. However, if this flow-ref is in a different application than the subflow that it calls, you need to first package the shared config file containing the subflow in a JAR file. Then, use Maven's dependency mechanism described in link:/mule-user-guide/v/3.7/sharing-custom-code[Sharing Custom Code] to include it in your application. Finally, import the config file as follows.
+If this flow-ref is in the same application, no further configuration is needed to call the subflow. However, if this flow-ref is in a different application than the subflow that it calls, you need to first package the shared config file containing the subflow in a JAR file. Then, use Maven's dependency mechanism described in link:/mule-user-guide/v/3.8/sharing-custom-code[Sharing Custom Code] to include it in your application. Finally, import the config file as follows.
 
 [source, xml, linenums]
 ----

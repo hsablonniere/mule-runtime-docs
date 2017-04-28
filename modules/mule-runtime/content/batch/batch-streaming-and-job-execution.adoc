@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::batch/batch-streaming-and-job-execution
+:page-id: mule-runtime@3.8::batch/batch-streaming-and-job-execution
 :keywords: connectors, anypoint, studio, esb, batch, batch processing
 
 *_Enterprise, CloudHub_*
@@ -130,7 +130,7 @@ image:sfdc_to_scv_streaming.png[sfdc_to_scv_streaming]
  
     xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
  
-    xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.7.0"
+    xmlns:spring="http://www.springframework.org/schema/beans" 
  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  
@@ -185,4 +185,4 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 == See Also
 
 * Access the xref:batch/batch-processing#[full documentation for Batch Processing] for the latest general availability release of Mule.
-* For more information on best design-time practices with DataSense and DataMapper, consult the xref:anypoint-studio@5::datasense/datasense#[DataSense documentation].
+* For more information on best design-time practices with DataSense and DataMapper, consult the xref:anypoint-studio@6::datasense/datasense#[DataSense documentation].

@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transformers/using-transformers
+:page-id: mule-runtime@3.8::transformers/using-transformers
 :keywords: anypoint studio, studio, mule, transformers
 
 Transformers convert message payloads to formats expected by their destinations. Mule provides many standard transformers, which you configure using predefined elements and attributes in your Mule XML configuration file. You can also configure custom transformers using the `<custom-transformer>` element, in which you specify the fully qualified class name of the custom transformer class. For more information on creating and configuring a custom transformer, see xref:transformers/custom/creating-custom-transformers#[Creating Custom Transformers].
@@ -55,7 +55,7 @@ You can chain transformers together so that the output from one transformer beco
 
 For example, this chain ultimately converts from a ByteArray to InputStream:
 
-[source, code, linenums]
+[source]
 ----
 transformer-refs="ByteArrayToString StringToObject ObjectToInputStream"
 ----
@@ -75,19 +75,16 @@ Note that if you specify transformer chains, any default transformers or discove
 
 Mule has an efficient transformation mechanism. Transformers are applied to inbound or outbound endpoints, and the data is transformed just before it is sent or received from an endpoint. Transformers can be concatenated, so it is simple to perform multiple transformations on data in transit.
 
-There is no one standard approach for how and where transformations should occur. Some maintain that because transformation should always be applied on inbound/outbound data, transformations should be available as part of the enterprise service bus instead of inside the components. This approach matches the concepts of Aspect Oriented Programming (AOP). Others conclude that it is far more efficient to encode the transformation logic into the components themselves. In the second case, however, there is no distinction between code that is related to a business process and code that is generic enough to be reused, which contradicts the philosophy of a Mule.
+There is no one standard approach for how and where transformations should occur. Some maintain that because transformation should always be applied on inbound/outbound data, transformations should be available as part of the enterprise service bus instead of inside the components. This approach matches the concepts of Aspect Oriented Programming (AOP). Others conclude that it is far more efficient to encode the transformation logic into the components themselves. In the second case, however, there is no distinction between code that is related to a business process and code that is generic enough to be reused, which contradicts the philosophy of an enterprise service bus.
 
-While there is no industry best practice, MuleSoft recommends that developers examine their transformation logic to see if it always uses (AOP) or if it is specific to a business process. In general, if it always is used, you should use a transformer, and if it is specific to a single business process, it should be part of the component.
+While there is no industry best practice, MuleSoft recommends that developers examine their transformation logic to see if it will always be used (AOP) or if it is specific to a business process. In general, if it's always used, you should use a transformer, and if it is specific to a single business process, it should be part of the component.
 
 Note the following cases where you should *not* configure a transformer:
 
 * Default transformers: some transports have default transformers that are called by default, but only if you don't configure explicit transformations.
 * Discoverable transformers: some transformers can be discovered and used automatically based on the type of message. You do not configure these transformers explicitly. These include custom transformers that have been defined as discoverable. For more information, see xref:transformers/custom/creating-custom-transformers#[Creating Custom Transformers].
 
-*References:* 
-
-* link:http://msdn2.microsoft.com/en-us/library/aa480061.aspx[Messaging Patterns in Service Oriented Architecture, Part 2]
-* link:http://it.toolbox.com/blogs/composite-apps/transformation-in-a-soa-12186[Transformation in a SOA]
+*See also:* link:http://msdn2.microsoft.com/en-us/library/aa480061.aspx[Messaging Patterns in Service Oriented Architecture]
 
 == Available Transformers
 
@@ -95,13 +92,14 @@ Following are the transformers available with Mule. Some transformers are specif
 
 === Basic
 
-The basic transformers are in the link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/transformer/simple/package-summary.html[org.mule.transformer.simple] package. They do not require any special configuration. For details on these transformers, see xref:transformers/transformers-configuration-reference#[Transformers Configuration Reference].
+The basic transformers are in the 
+link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/transformer/simple/package-summary.html[org.mule.transformer.simple] package. They do not require any special configuration. For details on these transformers, see xref:transformers/transformers-configuration-reference#[Transformers Configuration Reference].
 
 [%header,cols="2*"]
 |===
 |Transformer |Description
 |BeanBuilderTransformer a|
-Constructs simple bean objects by defining the object and then setting a number of expressions used to populate the bean properties. For example:
+(As of Mule 2.2) Constructs simple bean objects by defining the object and then setting a number of expressions used to populate the bean properties. For example:
 
 [source,xml, linenums]
 ----
@@ -119,7 +117,7 @@ Constructs simple bean objects by defining the object and then setting a number 
  ObjectToByteArray |A pair of transformers that convert between byte arrays and objects. If the byte array is not serialized, ByteArrayToObject returns a String created from the bytes as the returnType on the transformer.
 |ByteArrayToSerializable < - > +
  SerializableToByteArray |A pair of transformers that serialize and deserialize objects.
-|CombineCollectionsTransformer |Takes a payload which is a Collection of Collections and turns into a single List. For example, if the payload is a Collection which contains a Collection with elements A and B and another Collection with elements C and D, this turns them into a single Collection with elements A, B, C, and D.
+|CombineCollectionsTransformer |Takes a payload which is a Collection of Collections and turns into a single List. For example, if the payload is a Collection which contains a Collection with elements A and B and another Collection with elements C and D, this  turns them into a single Collection with elements A, B, C, and D.
 |ExpressionTransformer |Evaluates one or more expressions on the current message and return the results as an Array. For details, see xref:mel/mule-expression-language-mel#[Mule Expression Language MEL].
 |MessagePropertiesTransformer |A configurable message transformer that allows users to add, overwrite, and delete properties on the current message.
 |ObjectArrayToString < - > +
@@ -133,13 +131,13 @@ Constructs simple bean objects by defining the object and then setting a number 
 
 === XML
 
-The XML transformers are in the link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/module/xml/transformer/package-summary.html[org.mule.module.xml.transformer] package. They provide the ability to transform between different XML formats, use XSLT, and convert to POJOs from XML. For information, see xref:modules/xml-module-reference#[XML Module Reference].
+The XML transformers are in the link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/module/xml/transformer/package-summary.html[org.mule.module.xml.transformer] package. They provide the ability to transform between different XML formats, use XSLT, and convert to POJOs from XML. For information, see xref:modules/xml-module-reference#[XML Module Reference].
 
 [%header,cols="2*"]
 |===
 |Transformer |Description
 |xref:modules/xmlobject-transformers#[XmlToObject < - > ObjectToXml] |Converts XML to a Java object and back again using link:http://x-stream.github.io/[XStream].
-|xref:modules/jaxb-transformers#[JAXB XmlToObject < - > JAXB ObjectToXml] |Converts XML to a Java object and back again using the link:http://java.sun.com/developer/technicalArticles/WebServices/jaxb/[JAXB] binding framework.
+|xref:modules/jaxb-transformers#[JAXB XmlToObject < - > JAXB ObjectToXml] |Converts XML to a Java object and back again using the link:http://java.sun.com/developer/technicalArticles/WebServices/jaxb/[JAXB] binding framework (ships with JDK6)
 |xref:modules/xslt-transformer#[XSLT] |Transforms XML payloads using XSLT.
 |xref:modules/xquery-transformer#[XQuery] |Transforms XML payloads using link:http://en.wikipedia.org/wiki/XQuery[XQuery].
 |xref:modules/domtoxml-transformer#[DomToXml < - > XmlToDom] |Converts DOM objects to XML and back again.
@@ -151,15 +149,15 @@ The XML transformers are in the link:http://www.mulesoft.org/docs/site/3.7.0/api
 
 === JSON
 
-The JSON transformers are in the link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/module/json/transformers/package-summary.html[org.mule.module.json.transformers] package. They provide the ability to work with JSON documents and bind them automatically to Java objects. For information, see xref:transformers/native-support-for-json#[Native Support for JSON].
+The JSON transformers are in the link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/module/json/transformers/package-summary.html[org.mule.module.json.transformers] package. They provide the ability to work with JSON documents and bind them automatically to Java objects. For information, see xref:transformers/native-support-for-json#[Native Support for JSON].
 
 === Scripting
 
-The xref:modules/scripting-module-reference#[Scripting] transformer transforms objects using scripting, such as JavaScript or link:http://www.groovy-lang.org/[Groovy] scripts. This transformer is in the link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/module/scripting/transformer/package-summary.html[org.mule.module.scripting.transformer] package.
+The xref:modules/scripting-module-reference#[Scripting] transformer transforms objects using scripting, such as JavaScript or link:http://www.groovy-lang.org/[Groovy] scripts. This transformer is in the link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/module/scripting/transformer/package-summary.html[org.mule.module.scripting.transformer] package.
 
 === Encryption
 
-The encryption transformers are in the link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/transformer/encryption/package-summary.html[org.mule.transformer.encryption] package.
+The encryption transformers are in the link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/transformer/encryption/package-summary.html[org.mule.transformer.encryption] package.
 
 [%header,cols="2*"]
 |===
@@ -169,7 +167,7 @@ The encryption transformers are in the link:http://www.mulesoft.org/docs/site/3.
 
 === Compression
 
-The compression transformers are in the link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/transformer/compression/package-summary.html[org.mule.transformer.compression] package. They do not require any special configuration.
+The compression transformers are in the link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/transformer/compression/package-summary.html[org.mule.transformer.compression] package. They do not require any special configuration.
 
 [%header,cols="2*"]
 |===
@@ -179,7 +177,7 @@ The compression transformers are in the link:http://www.mulesoft.org/docs/site/3
 
 === Encoding
 
-The encoding transformers are in the link:http://www.mulesoft.org/docs/site/3.7.0/apidocs/org/mule/transformer/codec/package-summary.html[org.mule.transformer.codec] package. They do not require any special configuration.
+The encoding transformers are in the link:http://www.mulesoft.org/docs/site/3.8.0/apidocs/org/mule/transformer/codec/package-summary.html[org.mule.transformer.codec] package. They do not require any special configuration.
 
 [%header,cols="2*"]
 |===
@@ -205,8 +203,6 @@ The HTTP connector provides several transformers for converting an HTTP response
 _*Enterprise*_
 
 The Mule Enterprise version of the JDBC transport provides transformers for moving CSV and XML data from files to databases and back. For details, see xref:transports/jdbc-transport-reference#[JDBC Transport Reference].
-
-*Note*: The JDBC transport has been deprecated and will be removed in Mule version 4. Use the xref:connectors:database/database-connector#[Database Connector] instead.
 
 === JMS
 
@@ -234,9 +230,9 @@ This specifies the name of the Java class that the transformer returns.
 
 === ignoreBadInput
 
-If set to true, the transformer ignores any data that it does not know how to transform, but any transformers following it in the current chain are called. If set to false, the transformer also ignores any data that it does not know how to transform, but no further transformations take place.
+If set to true, the transformer  ignores any data that it does not know how to transform, but any transformers following it in the current chain is called. If set to false, the transformer  also ignores any data that it does not know how to transform, but no further transformations takes place.
 
-=== mimeType
+=== MIME Type
 
 This MIME type is set on all messages that this transformer produces.
 
@@ -249,4 +245,4 @@ This encoding is set on all messages that this transformer produces.
 * link:http://training.mulesoft.com[MuleSoft Training]
 * link:https://www.mulesoft.com/webinars[MuleSoft Webinars]
 * link:http://blogs.mulesoft.com[MuleSoft Blogs]
-* link:http://forums.mulesoft.com[MuleSoft's Forums]
+* link:http://forums.mulesoft.com[MuleSoft Forums]

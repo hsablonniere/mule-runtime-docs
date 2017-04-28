@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::api-usage/using-web-services
+:page-id: mule-runtime@3.8::api-usage/using-web-services
 :keywords: cxf
 
 Mule is designed to facilitate the use of Web services in the following ways:

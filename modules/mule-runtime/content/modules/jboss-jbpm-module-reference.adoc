@@ -2,10 +2,10 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::modules/jboss-jbpm-module-reference
-:keywords: mule, studio, jboss, bpms
+:page-id: mule-runtime@3.8::modules/jboss-jbpm-module-reference
+:keywords: mule, esb, studio, jboss, bpms
 
-link:http://www.jboss.org/jbpm[JBoss jBPM] is a best-of-breed open source BPMS and is well-integrated with Mule. One advantage of jBPM is that it is embedded directly in the Mule runtime, allowing for faster performance. For general information on jBPM and how to configure it, refer to the link:http://docs.jboss.org/jbpm/v4/userguide/html_single/[jBPM User Guide].
+link:http://www.jbpm.org[JBoss jBPM] is a best-of-breed open source BPMS and is well-integrated with Mule. One advantage of jBPM is that it is embedded directly in the Mule runtime, allowing for faster performance. For general information on jBPM and how to configure it, refer to the link:https://docs.jboss.org/jbpm/v4/userguide/html_single/[jBPM User Guide].
 
 [WARNING]
 This module provides a "Plug-in" for JBoss jBPM to be used with Mule's BPM support. If you have not yet read the general documentation for Mule's xref:modules/bpm-module-reference#[BPM Support], read that first and then come back to this page.
@@ -23,7 +23,7 @@ XML Schema location:
 
 [source]
 ----
-http://www.mulesoft.org/schema/mule/bpm/3.7/mule-bpm.xsd
+http://www.mulesoft.org/schema/mule/bpm/current/mule-bpm.xsd
 ----
 
 Syntax:
@@ -106,7 +106,7 @@ While an Oracle database uses these settings:
 
 One very important Hibernate setting to pay attention to is `hibernate.hbm2ddl.auto`. If this is set to `create`, Hibernate automatically creates the DB schema for jBPM at startup if it does not yet exist in your database. If it is set to `create-drop`, the schema also deletes at shutdown, which is useful in test environments.
 
-For more configuration options, refer to the link:http://docs.jboss.org/jbpm/v4/devguide/html_single/#configuration[jBPM documentation] and/or link:http://docs.jboss.org/hibernate/core/3.6/reference/en-US/html_single/#configuration-xmlconfig[Hibernate documentation].
+For more configuration options, refer to the link:http://docs.jboss.org/jbpm/v3/userguide/configuration.html[jBPM documentation] and/or link:http://docs.jboss.org/hibernate/core/current/reference/en-US/html_single/#configuration-xmlconfig[Hibernate documentation].
 
 === Mule Configuration
 
@@ -114,14 +114,14 @@ Using jBPM in your Mule configuration is then as simple as including the `<bpm:j
 
 *Default config*
 
-[source, xml]
+[source]
 ----
 <bpm:jbpm />
 ----
 
 *Custom config*
 
-[source, xml]
+[source]
 ----
 <bpm:jbpm name="jBPM" configurationResource="custom-jbpm-config.cfg.xml"/>
 ----
@@ -166,7 +166,7 @@ Mule provides two custom elements for jBPM's process definition language (jPDL).
 <mule ...cut...
     xmlns:bpm="http://www.mulesoft.org/schema/mule/bpm"
     xsi:schemaLocation="...cut...
-       http://www.mulesoft.org/schema/mule/bpm http://www.mulesoft.org/schema/mule/bpm/3.2/mule-bpm.xsd"> //<1>
+       http://www.mulesoft.org/schema/mule/bpm http://www.mulesoft.org/schema/mule/bpm/current/mule-bpm.xsd"> //<1>
 
     <bpm:jbpm name="jbpm" /> //<2>
 
@@ -268,7 +268,6 @@ Mule provides two custom elements for jBPM's process definition language (jPDL).
 
 No Child Elements of <jbpm...>
 
-
 == XML Schema
 
 This module uses the schema from the xref:modules/bpm-module-reference#[BPM Module]; it does not have its own schema.
@@ -278,7 +277,7 @@ Import the BPM schema as follows:
 [source, xml, linenums]
 ----
 xmlns:bpm="http://www.mulesoft.org/schema/mule/bpm"
-xsi:schemaLocation="http://www.mulesoft.org/schema/mule/bpm  http://www.mulesoft.org/schema/mule/bpm/3.6/mule-bpm.xsd"
+xsi:schemaLocation="http://www.mulesoft.org/schema/mule/bpm  http://www.mulesoft.org/schema/mule/bpm/current/mule-bpm.xsd"
 ----
 
 Refer to xref:modules/bpm-module-reference#[BPM Module Reference] for detailed information on the elements of the BPM schema.
@@ -289,7 +288,6 @@ If you are using Maven to build your application, use the following groupId and 
 
 [source, xml, linenums]
 ----
-
 <dependency>
   <groupId>org.mule.modules</groupId>
   <artifactId>mule-module-jbpm</artifactId>

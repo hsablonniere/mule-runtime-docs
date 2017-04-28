@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::transports/open-mq-integration
+:page-id: mule-runtime@3.8::transports/open-mq-integration
 :keywords: anypoint studio, esb, mq
 
 This page describes how to integrate Mule with the Open MQ JMS broker, the community version of http://docs.sun.com/app/docs/coll/1307.3[Sun Java System Message Queue]. It includes examples for configuring a direct connection and a JNDI connection.

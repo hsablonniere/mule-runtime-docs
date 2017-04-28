@@ -2,19 +2,19 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::deploy/configuring-mule-to-run-from-a-script
-:keywords: anypoint, esb, on premises, on premise, amc
+:page-id: mule-runtime@3.8::deploy/configuring-mule-to-run-from-a-script
+:keywords: anypoint, on premises, on premise, amc
 
 To start Mule from a script or from your IDE without using the Java Service Wrapper, you can use the `org.mule.MuleServer` class. This class accepts a couple of parameters.
 
-[source, code, linenums]
+[source]
 ----
 org.mule.MuleServer -config mule-config.xml
 ----
 
 or
 
-[source, code, linenums]
+[source]
 ----
 org.mule.MuleServer -builder <fully qualified classname> -config appContext.xml
 ----

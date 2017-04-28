@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::administer/clustering/distributed-file-polling
+:page-id: mule-runtime@3.8::administer/clustering/distributed-file-polling
 :keywords: file polling, cluster
 
 *_Enterprise Edition_*
@@ -23,5 +23,5 @@ To use distributed file polling, the flow's xref:flows/flow-processing-strategie
 
 [TIP]
 ====
-You can create and configure clusters with the graphical interface available in the link:/mule-management-console/v/3.3[Mule Management Console], or manually by link:/mule-management-console/v/3.7/creating-or-disbanding-a-cluster[editing the cluster configuration file.] For additional configuration options, including cluster network parameters, see xref:administer/clustering/creating-and-managing-a-cluster-manually#[Creating and Managing a Cluster Manually].
+You can create and configure clusters with the graphical interface available in the link:/mule-management-console/v/3.3[Mule Management Console], or manually by xref:mule-management-console@3.8::creating-or-disbanding-a-cluster#[editing the cluster configuration file.] For additional configuration options, including cluster network parameters, see xref:administer/clustering/creating-and-managing-a-cluster-manually#[Creating and Managing a Cluster Manually].
 ====

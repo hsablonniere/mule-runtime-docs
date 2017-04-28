@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::spring-integration/spring-application-contexts
+:page-id: mule-runtime@3.8::spring-integration/spring-application-contexts
 :keywords: anypoint studio, esb, spring
 
 This page describes the options available for controlling how Mule creates and manages Spring application contexts for your application.
@@ -14,10 +14,10 @@ By default, Mule will combine all resource files into a single `ApplicationConte
 [source, code, linenums]
 ----
 MuleContext muleContext = new DefaultMuleContextFactory().createMuleContext();
- 
+ 
 ConfigurationBuilder builder = new SpringXmlConfigurationBuilder("spring-beans.xml, mule-config.xml");
 builder.configure(muleContext);
- 
+ 
 muleContext.start();
 ----
 
@@ -27,7 +27,7 @@ Or, in a more abbreviated form, the single application context can be defined li
 [source, code, linenums]
 ----
 MuleContext muleContext = new DefaultMuleContextFactory().createMuleContext(
-                               new SpringXmlConfigurationBuilder("spring-beans.xml, mule-config.xml"));
+                               new SpringXmlConfigurationBuilder("spring-beans.xml, mule-config.xml"));
 muleContext.start();
 ----
 
@@ -38,13 +38,13 @@ You can instruct Mule to create a separate application context for each Mule con
 [source, code, linenums]
 ----
 MuleContext muleContext = new DefaultMuleContextFactory().createMuleContext();
- 
+ 
 ConfigurationBuilder builder1 = new SpringXmlConfigurationBuilder("spring-beans.xml");
 builder1.configure(muleContext);
- 
+ 
 ConfigurationBuilder builder2 = new SpringXmlConfigurationBuilder("mule-config.xml");
 builder2.configure(muleContext);
- 
+ 
 muleContext.start();
 ----
 
@@ -55,16 +55,16 @@ If you already have an application context, you can instruct Mule to use it as f
 [source, code, linenums]
 ----
 ApplicationContext myAppContext = getMyAppContextFromSomewhereElse();
- 
+ 
 ConfigurationBuilder builder1 = new SpringConfigurationBuilder(myAppContext);
 ConfigurationBuilder builder2 = new SpringXmlConfigurationBuilder("mule-config.xml");
- 
+ 
 List bList = new ArrayList();
 bList.add(builder1);
 bList.add(builder2);
- 
+ 
 MuleContext muleContext = new DefaultMuleContextFactory().createMuleContext(bList);
- 
+ 
 muleContext.start();
 ----
 
@@ -75,10 +75,10 @@ You can designate an existing application context as a http://static.springframe
 [source, code, linenums]
 ----
 ApplicationContext myAppContext = getMyAppContextFromSomewhereElse();
- 
+ 
 ConfigurationBuilder builder = new SpringXmlConfigurationBuilder("mule-config.xml");
 builder.setParentContext(myAppContext);
- 
+ 
 MuleContext muleContext = new DefaultMuleContextFactory().createMuleContext(builder);
 muleContext.start();
 ----

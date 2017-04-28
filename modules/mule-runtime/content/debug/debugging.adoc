@@ -2,7 +2,7 @@
 ifndef::env-github+env-site[]
 include::_attributes.adoc[]
 endif::[]
-:page-id: mule-runtime@3.7::debug/debugging
+:page-id: mule-runtime@3.8::debug/debugging
 :keywords: debugging, debug, troubleshoot, stack, debugger, using logs, source code, source files, libraries
 
 This section describes how to debug your Mule application. It also introduces a number of techniques useful in troubleshooting Mule problems and in gathering information for technical support.
@@ -11,6 +11,9 @@ This section describes how to debug your Mule application. It also introduces a 
 * xref:debug/configuring-mule-stacktraces#[Configuring Mule Stacktraces]
 * xref:debug/debugging-outside-studio#[Debugging Outside Studio]
 * xref:debug/logging#[Logging]
+* xref:debug/logging-in-mule#[Logging Configurations in Mule]
 
-[TIP]
-Check out the xref:anypoint-studio@5::studio-visual-debugger#[Studio Visual Debugger]
+== See Also
+
+* xref:anypoint-studio@6::studio-visual-debugger#[Debugging in Anypoint Studio's Visual Debugger]
+* xref:anypoint-studio@6::adding-source-attachments-to-studio#[Adding Source Attachments to Studio]
