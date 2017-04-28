@@ -1,11 +1,12 @@
 = Anypoint Connectors
 ifndef::env-github+env-site[]
-include::_attributes.adoc[]
+:moduledir: /modules/connectors
+:fragmentsdir: {moduledir}/fragments
+:imagesdir: {moduledir}/assets/images
+:samplesdir: {moduledir}/samples
 endif::[]
 :page-id: mule-runtime@3.8::connectors:anypoint-connectors
 :keywords: anypoint, components, elements, connectors
-
-include::../_attributes.adoc[]
 
 *Anypoint Connectors* facilitate integration of Mule applications with third-party APIs and standard integration protocols, providing a means to access web services and resources. Use our connectors within your Mule flows to send and receive data over a protocol or using an API.
 
