@@ -1,10 +1,8 @@
 = Anypoint Connectors
-ifndef::env-github+env-site[]
 :moduledir: /modules/connectors
 :fragmentsdir: {moduledir}/fragments
 :imagesdir: {moduledir}/assets/images
 :samplesdir: {moduledir}/samples
-endif::[]
 :page-id: mule-runtime@3.8::connectors:anypoint-connectors
 :keywords: anypoint, components, elements, connectors
 
