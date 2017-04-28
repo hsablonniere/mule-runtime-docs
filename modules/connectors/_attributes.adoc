@@ -1,3 +1,4 @@
+:moduledir: /modules/connectors
 :fragmentsdir: {moduledir}/fragments
 :imagesdir: {moduledir}/assets/images
 :samplesdir: {moduledir}/samples
